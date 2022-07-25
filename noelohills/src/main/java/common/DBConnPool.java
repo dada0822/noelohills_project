@@ -10,43 +10,49 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 public class DBConnPool {
-	public Connection con; // ë°ì´í„°ë² ì´ìŠ¤ì™€ ì—°ê²°ì„ ë‹´ë‹¹
-	public Statement stmt; // ì¸íŒŒë¼ë¯¸í„° ì—†ëŠ” ì •ì  ì¿¼ë¦¬ë¬¸ì„ ë‹´ë‹¹
-	public PreparedStatement psmt; // ì¸íŒŒë¼ë¯¸í„°ê°€ ìˆëŠ” ë™ì  ì¿¼ë¦¬ë¬¸ì„ ë‹´ë‹¹
-	public ResultSet rs; //SELECT ì¿¼ë¦¬ë¬¸ì˜ ê²°ê³¼ë¥¼ ì €ì¥
+	public Connection con; // µ¥ÀÌÅÍº£ÀÌ½º¿Í ¿¬°áÀ» ´ã´ç
+	public Statement stmt; // ÀÎÆÄ¶ó¹ÌÅÍ°¡ ¾ø´Â Á¤Àû Äõ¸®¹®À» ´ã´ç
+	public PreparedStatement psmt; // ÀÎÆÄ¶ó¹ÌÅÍ°¡ ÀÖ´Â µ¿Àû Äõ¸®¹®À» ´ã´ç
+	public ResultSet rs; // SELECT Äõ¸®¹®ÀÇ °á°ú¸¦ ÀúÀå
 	
-	public DBConnPool(){
+	public DBConnPool() {
+		
 		try {
-			//ìë°”ì˜ ë„¤ì´ë° ì„œë¹„ìŠ¤(JNDI)ì—ì„œ ì´ë¦„ê³¼ ì‹¤ì œ ê°ì²´ë¥¼ ì—°ê²°í•´ì£¼ëŠ” ê°œë… Context
-			//Contextë¥¼ ë‹¤ë£¨ê¸° ìœ„í•œ ì‹œì‘ì  InitialContext()
+			// ÀÚ¹ÙÀÇ ³×ÀÌ¹Ö ¼­ºñ½º(JNDI)¿¡¼­ ÀÌ¸§°ú ½ÇÁ¦ °´Ã¼¸¦ ¿¬°áÇØÁÖ´Â °³³ä Context
+			// Context¸¦ ´Ù·ç±â À§ÇÑ ½ÃÀÛÁ¡ InitialContext()
 			Context initCtx = new InitialContext();
 			
-			//"java:comp/env"ë¼ëŠ” ì´ë¦„ì„ ì¸ìˆ˜ë¡œ Contextê°ì²´ë¥¼ ì–»ìŒ
-			//"java:comp/env" : í˜„ì¬ ì›¹ ì–´í”Œë¦¬ì¼€ì´ì…˜ ë£¨íŠ¸ ë””ë ‰í„°ë¦¬.
+			// "java:comp/env"¶ó´Â ÀÌ¸§À» ÀÎ¼ö·Î Context °´Ã¼¸¦ ¾òÀ½
+			// "java:comp/env" : ÇöÀç À¥ ¾îÇÃ¸®ÄÉÀÌ¼ÇÀÇ ·çÆ® µğ·ºÅÍ¸®
 			Context ctx = (Context)initCtx.lookup("java:comp/env");
-			//"java:comp/env" ì•„ë˜ì— ìœ„ì¹˜í•œ dbcp_myoracle ìì›ì„ ê°€ì ¸ì˜´
+			
+			// "java:comp/env" ¾Æ·¡¿¡ À§Ä¡ÇÑ dbcp_myoracle ÀÚ¿øÀ» °¡Á®¿È
 			DataSource source = (DataSource)ctx.lookup("dbcp_myoracle");
 			
-			//ë°ì´í„° ì†ŒìŠ¤ë¥¼ í†µí•´ í’€ì— ìƒì„±ë˜ì–´ìˆëŠ” ì—°ê²° ê°ì²´ë¥¼ ì–»ì–´ì™€ì„œ
-			//ë©¤ë²„ ë³€ìˆ˜ì— ì €ì¥í•˜ë©´ ë.
+			// µ¥ÀÌÅÍ ¼Ò½º¸¦ ÅëÇØ Ç®¿¡ »ı¼ºµÇ¾î ÀÖ´Â ¿¬°á °´Ã¼¸¦ ¾ò¾î¿Í¼­
+			// ¸â¹öº¯¼ö¿¡ ÀúÀåÇÏ¸é ³¡.
 			con = source.getConnection();
 			
-			System.out.println("DB ì»¤ë„¥ì…˜ í’€ ì—°ê²° ì„±ê³µ");
-		}catch(Exception e) {
-			System.out.println("DB ì»¤ë„¥ì…˜ í’€ ì—°ê²° ì‹¤íŒ¨");
+			System.out.println("DB Ä¿³Ø¼Ç Ç® ¿¬°á ¼º°ø");
+		} catch(Exception e) {
+			System.out.println("DB Ä¿³Ø¼Ç Ç® ¿¬°á ½ÇÆĞ");
 			e.printStackTrace();
 		}
+		
 	}
+	
+	// ¿¬°á ÇØÁ¦
 	public void close() {
 		try {
 			if(rs != null) rs.close();
-			if(stmt !=null) stmt.close();
-			if(psmt !=null) psmt.close();
+			if(stmt != null) stmt.close();
+			if(psmt != null) psmt.close();
 			if(con != null) con.close();
 			
-			System.out.println("DBC ìì› í•´ì œ");
-		}catch(Exception e) {
+			System.out.println("JDBC ÀÚ¿ø ÇØÃ¼");
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
 }

@@ -42,7 +42,7 @@
 					<li>
 						<a href="">SHOP</a>
 						<ul class="sub_nav">
-							<li><a href="">ALL PRODUCTS</a></li>
+							<li><a href="/noelohills/product.do">ALL PRODUCTS</a></li>
 							<li><a href="">BABY</a></li>
 							<li><a href="">FAMILY</a></li>
 							<li><a href="">BATH GOODS</a></li>
