@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600&display=swap" rel="stylesheet">
 <link href="../css/Header.css" rel="stylesheet">
 </head>
 <body>
@@ -40,7 +43,6 @@
 						<a href="">SHOP</a>
 						<ul class="sub_nav">
 							<li><a href="">ALL PRODUCTS</a></li>
-							<li><a href="">출산준비물</a></li>
 							<li><a href="">BABY</a></li>
 							<li><a href="">FAMILY</a></li>
 							<li><a href="">BATH GOODS</a></li>
