@@ -1,99 +1,41 @@
 package common;
 
-import java.util.List;
-
 public class BoardPage {
 	public static String pagingStr(int totalCount, int pageSize, int blockPage, int pageNum, String reqUrl) {
+		
 		String pagingStr = "";
 		
-		//ì „ì²´ í˜ì´ì§€ ìˆ˜ ê³„ì‚°;
-		int totalPages = (int)Math.ceil((double)totalCount/pageSize);
+		// ÀüÃ¼ ÆäÀÌÁö ¼ö °è»ê
+		int totalPages = (int)(Math.ceil((double)totalCount / pageSize));
 		
-		//ì´ì „ í˜ì´ì§€ ë¸”ë¡ ë°”ë¡œê°€ê¸° ì¶œë ¥
+		// ÀÌÀü ÆäÀÌÁö ºí·Ï ¹Ù·Î°¡±â Ãâ·Â
+		// 1~5 ÆäÀÌÁö -> 1, 6~10 ÆäÀÌÁö -> 6
 		int pageTemp = (((pageNum - 1) / blockPage) * blockPage) + 1;
 		
 		if (pageTemp != 1) {
-			pagingStr += "<a href='"+ reqUrl + "?pageNum=1'>[ì²« í˜ì´ì§€]</a>";
-			pagingStr += "&nbsp";
-			pagingStr += "<a href='"+ reqUrl + "?pageNum=" +(pageTemp-1)+"'>[ì´ì „ í˜ì´ì§€]</a>";
+			pagingStr = "<a href='" + reqUrl + "?pageNum=1'>[Ã¹ ÆäÀÌÁö] </a>";
+			pagingStr += "&nbsp;";
+			pagingStr += "<a href='" + reqUrl + "?pageNum=" + (pageTemp - 1) + "'>[ÀÌÀü ºí·Ï] </a>";
 		}
 		
-		//ê° í˜ì´ì§€ì˜ ë²ˆí˜¸ ì¶œë ¥
-		int blockCount =1;
-		while(blockCount<=blockPage && pageTemp <= totalPages){
-			if (pageTemp == pageNum) {
-				pagingStr += "&nbsp;" + pageTemp + "&nbsp;";
-			}else {
-				pagingStr += "&nbsp;";
-				pagingStr += "<a href='"+ reqUrl +"?pageNum=" +pageTemp+"'>"+pageTemp+"</a>";
-				pagingStr += "&nbsp;";
+		// °¢ ÆäÀÌÁöÀÇ ¹øÈ£ Ãâ·Â
+		int blockCount = 1;
+		
+		while(blockCount <= blockPage && pageTemp <= totalPages) {
+			if(pageTemp == pageNum) {
+				pagingStr += "&nbsp; " + pageTemp + "&nbsp;";
+			} else {
+				pagingStr += "&nbsp; <a href='" + reqUrl + "?pageNum=" + pageTemp + "'>" + pageTemp + "</a>&nbsp;";
 			}
 			pageTemp++;
 			blockCount++;
 		}
-		//ë‹¤ìŒ í˜ì´ì§€ ë¸”ë¡ ë°”ë¼ê³ ê¸° ì¶œë ¥
+		
+		// ´ÙÀ½ ÆäÀÌÁö ºí·Ï ¹Ù·Î°¡±â Ãâ·Â
 		if (pageTemp <= totalPages) {
-			pagingStr += "<a href='"+ reqUrl + "?pageNum=" +(pageTemp)+"'>[ë‹¤ìŒ í˜ì´ì§€]</a>";
-			pagingStr += "&nbsp";
-			pagingStr += "<a href='"+ reqUrl + "?pageNum=" +totalPages + "'>[ë§ˆì§€ë§‰ í˜ì´ì§€]</a>";
-		}
-		
-		return pagingStr;
-	}
-	
-	public static String pagingStr(int totalCount, int pageSize, int blockPage, int pageNum, String reqUrl, List<Object> searchWord) {
-		String pagingStr = "";
-		
-		//ì „ì²´ í˜ì´ì§€ ìˆ˜ ê³„ì‚°;
-		int totalPages = (int)Math.ceil((double)totalCount/pageSize);
-		
-		//ì´ì „ í˜ì´ì§€ ë¸”ë¡ ë°”ë¡œê°€ê¸° ì¶œë ¥
-		int pageTemp = (((pageNum - 1) / blockPage) * blockPage) + 1;
-		
-		if (pageTemp != 1) {
-			pagingStr += "<a href='"+ reqUrl + "?pageNum=1'";
-					for (int i =0; i<searchWord.size(); i++) {
-						pagingStr += "&p_cat="+searchWord.get(i);
-					};
-			pagingStr += ">[ì²« í˜ì´ì§€]</a>";
-			pagingStr += "&nbsp";
-			pagingStr += "<a href='"+ reqUrl + "?pageNum=" +(pageTemp-1);
-					for (int i =0; i<searchWord.size(); i++) {
-						pagingStr += "&p_cat="+searchWord.get(i);
-					};
-			pagingStr += "'>[ì´ì „ í˜ì´ì§€]</a>";
-		}
-		
-		//ê° í˜ì´ì§€ì˜ ë²ˆí˜¸ ì¶œë ¥
-		int blockCount =1;
-		while(blockCount<=blockPage && pageTemp <= totalPages){
-			if (pageTemp == pageNum) {
-				pagingStr += "&nbsp;" + pageTemp + "&nbsp;";
-			}else {
-				pagingStr += "&nbsp;";
-				pagingStr += "<a href='"+ reqUrl +"?pageNum=" +pageTemp;
-					for (int i =0; i<searchWord.size(); i++) {
-						pagingStr += "&p_cat="+searchWord.get(i);
-					};	
-				pagingStr +="'>"+pageTemp+"</a>";
-				pagingStr += "&nbsp;";
-			}
-			pageTemp++;
-			blockCount++;
-		}
-		//ë‹¤ìŒ í˜ì´ì§€ ë¸”ë¡ ë°”ë¼ê³ ê¸° ì¶œë ¥
-		if (pageTemp <= totalPages) {
-			pagingStr += "<a href='"+ reqUrl + "?pageNum=" +(pageTemp);
-					for (int i =0; i<searchWord.size(); i++) {
-						pagingStr += "&p_cat="+searchWord.get(i);
-					};	
-			pagingStr +="'>[ë‹¤ìŒ í˜ì´ì§€]</a>";
-			pagingStr += "&nbsp";
-			pagingStr += "<a href='"+ reqUrl + "?pageNum=" +totalPages;
-					for (int i =0; i<searchWord.size(); i++) {
-						pagingStr += "&p_cat="+searchWord.get(i);
-					};			
-			pagingStr += "'>[ë§ˆì§€ë§‰ í˜ì´ì§€]</a>";
+			pagingStr += "<a href='" + reqUrl + "?pageNum=" + pageTemp + "'>[´ÙÀ½ ºí·Ï] </a>";
+			pagingStr += "&nbsp;";
+			pagingStr += "<a href='" + reqUrl + "?pageNum=" + totalPages + "'>[¸¶Áö¸· ÆäÀÌÁö] </a>";
 		}
 		return pagingStr;
 	}

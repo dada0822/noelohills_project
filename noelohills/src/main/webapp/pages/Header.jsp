@@ -1,20 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600&display=swap" rel="stylesheet">
-<link href="../css/Header.css" rel="stylesheet">
-</head>
-<body>
+<link href="${pageContext.request.contextPath}/css/Header.css" rel="stylesheet">
 	<div class="header">
 		<div class="header_in">
 			<div id="logo">
-				<a href="./Index.jsp"><img src="../image/header/logo_new.png" alt="noelohills"></a>
+				<a href="./Index.jsp"><img src="${pageContext.request.contextPath}/image/header/logo_new.png" alt="noelohills"></a>
 			</div>
 		
 			<nav>
@@ -40,10 +34,10 @@
 						</ul>
 					</li>
 					<li>
-						<a href="">SHOP</a>
+						<a href="./product.do">SHOP</a>
 						<ul class="sub_nav">
-							<li><a href="/noelohills/product.do">ALL PRODUCTS</a></li>
-							<li><a href="">BABY</a></li>
+							<li><a href="./product.do">ALL PRODUCTS</a></li>
+							<li><a href="./product.do?p_categorycode=${productList.get(1).p_categorycode}">BABY</a></li>
 							<li><a href="">FAMILY</a></li>
 							<li><a href="">BATH GOODS</a></li>
 							<li><a href="">PRESENTS</a></li>
@@ -67,11 +61,9 @@
 			
 			<div class="profile">
 				<ul>
-					<li><a href=""><img src="../image/header/ico-login.png" alt="login"></a></li>
-					<li><a href=""><img src="../image/header/ico-login.png" alt="login"></a></li>
+					<li><a href=""><img src="${pageContext.request.contextPath}/image/header/ico-login.png" alt="login"></a></li>
+					<li><a href=""><img src="${pageContext.request.contextPath}/image/header/ico-login.png" alt="login"></a></li>
 				</ul>
 			</div>
 		</div> <!-- .header_in -->
 	</div> <!-- .header -->
-</body>
-</html>

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.test{
+	
+    min-height: 100%;
+    position: relative;
+}
+
+.test1{
+	margin-top: 100px;
+    padding-bottom: 195px; /* footer의 높이 */
+}
+
+.test1 img{
+	width: 300px;
+	height: auto;
+}

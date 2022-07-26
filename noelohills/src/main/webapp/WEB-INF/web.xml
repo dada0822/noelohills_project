@@ -10,7 +10,7 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-  	<filter>
+ 	<filter>
 		<filter-name>SetCharEncoding</filter-name>
 		<filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
 		<init-param>
@@ -38,19 +38,30 @@
 		<param-name>OracleUrl</param-name>
 		<param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
 	</context-param>
-
+	
 	<!-- 계정ID -->
 	<context-param>
 		<param-name>OracleId</param-name>
-		<param-value>test1</param-value>
+		<param-value>dada</param-value>
 	</context-param>
-
+	
 	<!-- 계정PW -->
 	<context-param>
 		<param-name>OraclePw</param-name>
 		<param-value>1234</param-value>
 	</context-param>
   
+	<context-param>
+	  	<param-name>POSTS_PER_PAGE</param-name>
+	  	<param-value>12</param-value>
+  	</context-param>
+  
+	<context-param>
+	  	<param-name>PAGES_PER_BLOCK</param-name>
+	  	<param-value>5</param-value>
+	</context-param>
+  
+  <!-- 서블릿 등록 -->
   <servlet>
     <servlet-name>ProductController</servlet-name>
     <servlet-class>product.ProductController</servlet-class>
@@ -58,7 +69,17 @@
   
   <servlet-mapping>
     <servlet-name>ProductController</servlet-name>
-    <url-pattern>/product.do</url-pattern>
+    <url-pattern>/pages/product.do</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>ProductDetatilController</servlet-name>
+    <servlet-class>product.ProductDetatilController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ProductDetatilController</servlet-name>
+    <url-pattern>/pages/productDetail.do</url-pattern>
   </servlet-mapping>
   
 </web-app>
