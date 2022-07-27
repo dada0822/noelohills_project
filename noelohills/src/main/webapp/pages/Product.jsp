@@ -13,29 +13,52 @@
 </head>
 <body class="test">
 	<jsp:include page="./Header.jsp" />
-	out.println(${productList.get(1).p_categorycode});
+	
 	<div class="test1">
-		<c:forEach items="${productList}" var="total">
-			<a href="../pages/productDetail.do?p_code=${total.p_code}">
-				<img src="${pageContext.request.contextPath}/image/product/${total.p_name}_1.jpg">
-				<br>
-				<span>${total.p_name}</span>
-			</a>
-			<p>${total.p_price}원</p>
-		</c:forEach>
+	
+		<c:choose>
+				<c:when test="${ empty cate_product }">
+					<c:forEach items="${productList}" var="total" varStatus="loop">
+						<%-- <input type="hidden" name="p_categorycode" value="${total.p_categorycode}"> --%>
+						<a href="../pages/productDetail.do?p_code=${total.p_code}">
+							<img src="${pageContext.request.contextPath}/image/product/${total.p_name}_1.jpg">
+							<br>
+							<span>${total.p_name}</span>
+						</a>
+						<p>${total.p_price}원</p>
+					</c:forEach>
+					
+					<table width="100%">
+						<tr align="center">
+							<td>
+								${map.pagingImg}
+							</td>
+						</tr>
+					</table>
+					
+				</c:when>
+				<c:otherwise>
+					
+					<c:forEach items="${cate_product}" var="total" varStatus="loop">
+						<input type="hidden" name="p_categorycode" value="${total.p_categorycode}">
+						<a href="../pages/productDetail.do?p_code=${total.p_code}">
+							<img src="${pageContext.request.contextPath}/image/product/${total.p_name}_1.jpg">
+							<br>
+							<span>${total.p_name}</span>
+						</a>
+						<p>${total.p_price}원</p>
+					</c:forEach>
+					
+				</c:otherwise>
+			</c:choose>
+	
+	
 		
-		<table width="100%">
-		<tr align="center">
-			<td>
-				${map.pagingImg}
-			</td>
-		</tr>
-	</table>
+		
 		
 		
 	</div>
 	
-	<%-- <a href="../model2/view.do?idx=${row.idx }">${ row.title }</a> --%>
 	
 	<jsp:include page="./Footer.jsp" />
 </body>

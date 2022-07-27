@@ -11,8 +11,7 @@ public class ProductDAO extends DBConnPool {
 		super();
 	}
 	
-	// 전체 보기, 카테코리 별로 보기, 상세 보기! 페이징
-	
+//	상품 전체 페이지
 	// 게시물 개수 세기
 	public int selectCount() {
 
@@ -73,40 +72,41 @@ public class ProductDAO extends DBConnPool {
 	}
 	
 	// 상품 전체 조회
-	public List<ProductDTO> totalProduct() {
-		List<ProductDTO> list = new Vector<ProductDTO>();
-		
-		String query = "SELECT * FROM product";	
-		try {
-			
-			stmt = con.createStatement();
-			rs = stmt.executeQuery(query);
-			
-			while(rs.next()) {
-				ProductDTO dto = new ProductDTO();
-				
-				dto.setP_code(rs.getString("p_code"));
-				dto.setP_categorycode(rs.getString("p_categorycode"));
-				dto.setP_name(rs.getString("P_name"));
-				dto.setP_price(rs.getString("p_price"));
-				dto.setP_totalprice(rs.getString("p_totalprice"));
-				dto.setP_count(rs.getString("p_count"));
-				
-				list.add(dto);
-			}
-		}catch(Exception e) {
-			System.out.println("상품 정렬 중 예외 발생");
-			e.printStackTrace();
-		}
-		return list;
-
-	}
+//	public List<ProductDTO> totalProduct() {
+//		List<ProductDTO> list = new Vector<ProductDTO>();
+//		
+//		String query = "SELECT * FROM product";	
+//		try {
+//			
+//			stmt = con.createStatement();
+//			rs = stmt.executeQuery(query);
+//			
+//			while(rs.next()) {
+//				ProductDTO dto = new ProductDTO();
+//				
+//				dto.setP_code(rs.getString("p_code"));
+//				dto.setP_categorycode(rs.getString("p_categorycode"));
+//				dto.setP_name(rs.getString("P_name"));
+//				dto.setP_price(rs.getString("p_price"));
+//				dto.setP_totalprice(rs.getString("p_totalprice"));
+//				dto.setP_count(rs.getString("p_count"));
+//				
+//				list.add(dto);
+//			}
+//		}catch(Exception e) {
+//			System.out.println("상품 정렬 중 예외 발생");
+//			e.printStackTrace();
+//		}
+//		return list;
+//	}
 	
 	// 카테고리별 상품 출력하기
 	public List<ProductDTO> categoryProductList(String p_categorycode) {
 		List<ProductDTO> list = new Vector<ProductDTO>();
 		
-		String query = "SELECT * FROM product WHERE p_categorycode=?"
+		String query = "SELECT p_code, p_categorycode, p_name, TO_CHAR(p_price, '999,999') p_price, "
+					+ " TO_CHAR(p_totalprice, '999,999,999') p_totalprice, p_count "
+					+ " FROM product WHERE p_categorycode=? "
 					+ " ORDER BY TO_NUMBER(p_code) DESC";
 		
 		try {
@@ -116,7 +116,6 @@ public class ProductDAO extends DBConnPool {
 			
 			while(rs.next()) {
 				ProductDTO dto = new ProductDTO();
-				
 				dto.setP_code(rs.getString("p_code"));
 				dto.setP_categorycode(rs.getString("p_categorycode"));
 				dto.setP_name(rs.getString("P_name"));
@@ -134,6 +133,31 @@ public class ProductDAO extends DBConnPool {
 		return list;
 	}
 	
+	// 카테고리 코드만 따오기 
+	public List<ProductDTO> categoryCode() {
+		List<ProductDTO> list = new Vector<ProductDTO>();
+		
+		String query = "select p_categorycode from product GROUP by p_categorycode order by p_categorycode ASC";
+		
+		try {
+			stmt = con.createStatement();
+			
+			rs = stmt.executeQuery(query);
+			while (rs.next()) {
+				ProductDTO dto = new ProductDTO();
+				
+				dto.setP_categorycode(rs.getString("p_categorycode"));
+				
+				list.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("카테고리코드를 불러오는 도중 예외 발생");
+		}
+		return list;
+	}
+	
+//	상품 상세보기 페이지
 	// 상품 상세보기
 	public ProductDTO productView(String p_code) {
 		ProductDTO dto = new ProductDTO();

@@ -15,18 +15,44 @@
 		<div class="wrap_1">
 			<img id="main_img" src="../image/product/${dto.p_name}_1.jpg" alt="${dto.p_name} 대표이미지">
 			<c:forEach var="dd" items="${imgList}">
-				<img id="small_img" src="../image/product/${dto.p_name}_${dd.pr_imgnum}.jpg" alt="${dto.p_name} 이미지">
+				<img id="small_img" class="small_img" src="../image/product/${dto.p_name}_${dd.pr_imgnum}.jpg" alt="${dto.p_name} 이미지">
 			</c:forEach>
 			
 			
 			${dto.p_name}
+			<!-- 상품 내용 -->
 			${dto.p_price}원
-			${dto.p_totalprice}원
-			${dto.p_count}개
+			
+			<input type='button' onclick='count("minus")' value='-'/>
+			<input type='button' onclick='count("plus")' value='+'/>
+			<div class='result'>${dto.p_count}</div>
+			<div><span class='result'>${dto.p_count}</span>개</div>
+			
+			
+<!-- 			수량 : <input type="hidden" name="sell_price" value="5500">
+			<input type="text" name="amount" value="1" size="3" max="">
+			<input type="button" value=" + " name="add">
+			<input type="button" value=" - " name="minus"><br>
+			금액 : <input type="text" name="sum" size="11" readonly>원 -->
+			
+			
+						
+			<div>총 상품금액 : <span id="ptotalprice">${dto.p_totalprice}</span>원</div>
+			<div><span id="pcount">${dto.p_count}</span>개</div>
+			
+			
+			<div class="content_right">
+ 
+			</div>
+			
+			
 		</div>
+		
+		
+		
 	</div>
 	
 	<jsp:include page="./Footer.jsp" />
-	<script src="../js/ProductDetail.js"></script>
+	<script src="${pageContext.request.contextPath}/js/ProductDetail.js"></script>
 </body>
 </html>

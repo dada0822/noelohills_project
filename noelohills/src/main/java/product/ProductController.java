@@ -41,7 +41,11 @@ public class ProductController extends HttpServlet {
 		map.put("end", end);
 		
 		List<ProductDTO> productList = dao.selectListPage(map); // 상품 전체 조회
-//		dao.categoryProductList();
+		
+		String p_categorycode = req.getParameter("p_categorycode");
+		List<ProductDTO> cate_product = dao.categoryProductList(p_categorycode); // 카테고리 별로 상품 정렬
+		
+		List<ProductDTO> p_catecode = dao.categoryCode(); // 카테고리 코드 따오기
 
 		String pagingImg = BoardPage.pagingStr(totalCount, pageSize, blockPage, pageNum, "./product.do");
 	
@@ -53,7 +57,9 @@ public class ProductController extends HttpServlet {
 		dao.close();
 		
 		req.setAttribute("productList", productList);
+		req.setAttribute("cate_product", cate_product);
 		req.setAttribute("map", map);
+		req.setAttribute("p_catecode", p_catecode);
 		
 		req.getRequestDispatcher("/pages/Product.jsp").forward(req, resp);
 	}

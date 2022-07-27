@@ -37,10 +37,10 @@
 						<a href="./product.do">SHOP</a>
 						<ul class="sub_nav">
 							<li><a href="./product.do">ALL PRODUCTS</a></li>
-							<li><a href="./product.do?p_categorycode=${productList.get(1).p_categorycode}">BABY</a></li>
-							<li><a href="">FAMILY</a></li>
-							<li><a href="">BATH GOODS</a></li>
-							<li><a href="">PRESENTS</a></li>
+							<li><a href="./product.do?p_categorycode=${p_catecode.get(0).p_categorycode}">BABY</a></li>
+							<li><a href="./product.do?p_categorycode=${p_catecode.get(1).p_categorycode}">FAMILY</a></li>
+							<li><a href="./product.do?p_categorycode=${p_catecode.get(2).p_categorycode}">BATH GOODS</a></li>
+							<li><a href="./product.do?p_categorycode=${p_catecode.get(3).p_categorycode}">PRESENTS</a></li>
 						</ul>
 					</li>
 					<li>

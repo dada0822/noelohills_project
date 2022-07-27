@@ -17,13 +17,13 @@ public class ProductDetatilController extends HttpServlet {
 
 		String p_code = req.getParameter("p_code");
 		
-		ProductDTO dto = dao1.productView(p_code);
+		ProductDTO dto = dao1.productView(p_code); // 상품 상세보기
 		
 		dao1.close();
 		
 		Product_imgDAO dao2 = new Product_imgDAO();
 		
-		List<Product_imgDTO> imgList = dao2.product_imgView(p_code); 
+		List<Product_imgDTO> imgList = dao2.product_imgView(p_code); // 상품 코드와 맞는 이미지 불러오기  
 		
 		req.setAttribute("dto", dto);
 		req.setAttribute("imgList", imgList);
