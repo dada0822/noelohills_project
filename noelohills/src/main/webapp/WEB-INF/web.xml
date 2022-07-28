@@ -82,4 +82,24 @@
     <url-pattern>/pages/productDetail.do</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>SignupController</servlet-name>
+    <servlet-class>member.SignupController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>SignupController</servlet-name>
+    <url-pattern>/pages/signup.do</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>member.LoginController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/pages/login.do</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

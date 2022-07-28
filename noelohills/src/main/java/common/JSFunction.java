@@ -3,68 +3,41 @@ package common;
 import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.jsp.JspWriter;
 
 public class JSFunction {
-	//ë©”ì‹œì§€ ì•Œë¦¼ì°½ì„ í‘œì‹œí•œ í›„ íŠ¹ì • urlë¡œ ì´ë™í•˜ëŠ” ìŠ¤í¬ë¦½íŠ¸ì½”ë“œ
 	
-	public static void alertLocation(String msg, String url, JspWriter out){
-		try {
-			String script = ""
-					+ "<script>"
-					+ " alert('" +msg + "');"
-					+ " location.href = '" + url + "';"
-					+ "</script>";
-			out.print(script);
-		} catch (Exception e) {}
-	}
-	
-	//ë©”ì‹œì§€ ì•Œë¦¼ì°½ì„ í‘œì‹œí•œ í›„ ì´ì „ í˜ì´ì§€ë¡œ ëŒì•„ê°€ê¸°
-	public static void alertBack(String msg, JspWriter out) {
-		try {
-			String script =""
-					+ "<script>"
-					+ " alert('" +msg + "');"
-					+ " history.back();"
-					+ "</script>";
-			out.print(script);
-		}catch (Exception e) {}
-	}
-	
-	//ì„œë¸”ë¦¿ì—ì„œ ê²½ê³ ì°½ í‘œì‹œí•˜ê³  ë‹¤ë¥¸ í˜ì´ì§€ë¡œ ì´ë™
 	public static void alertLocation(HttpServletResponse resp, String msg, String url) {
+		
 		try {
-			//ì„œë¸”ë¦¿ì—ì„œ ë‚´ìš©ì„ ì¶œë ¥í•˜ê¸°ìœ„í•´ ì½˜í…ì¸  íƒ€ì… ì§€ì •
+			// ±Û¾²±â 12. ¼­ºí¸´¿¡¼­ ³»¿ëÀ» Ãâ·ÂÇÏ±â À§ÇØ ÄÜÅÙÃ÷ Å¸ÀÔ ÁöÁ¤
 			resp.setContentType("text/html;charset=UTF-8");
+			 
+			// ±Û¾²±â 13. getWriter() ¸Ş¼­µå¸¦ ÅëÇØ PrintWriter °´Ã¼ ¾ò¾î¿È
 			PrintWriter writer = resp.getWriter();
 			
-			String script = "<script>"
-					+ "		alert('" + msg + "');"
-					+ "		location.href='" + url + "';"
-					+ "</script>";
+			// ±Û¾²±â 14. Ç¥ÇöÇÏ°íÀÚ ÇÏ´Â ½ºÅ©¸³Æ® ÄÚµå¸¦ ÇÏ³ªÀÇ ¹®ÀÚ¿­·Î ¸¸µé¾î ¼­ºí¸´¿¡¼­ Áï½Ã Ãâ·ÂÇÔ
+			String script = "<script>alert('" + msg + "'); location.href='" + url + "';</script>";
 			writer.print(script);
-		}catch(Exception e) {
-			System.out.println("alertLocation ë¬¸ì œ");
-			e.printStackTrace();
-		}
+		} catch (Exception e) { }
 	}
 	
-	//ì„œë¸”ë¦¿ì—ì„œ ì•Œë¦¼ì°½ì„ ì¶œë ¥í•˜ê³  ì´ì „ í˜ì´ì§€ë¡œ ëŒì•„ê°
-	
+	// ¼öÁ¤ 38. ¼­ºí¸´¿¡¼­ ¾Ë¸²Ã¢ Ç¥½ÃÇÏ°í ÀÌÀü ÆäÀÌÁö·Î µ¹¾Æ°¨
 	public static void alertBack(HttpServletResponse resp, String msg) {
+		
 		try {
-			//ì„œë¸”ë¦¿ì—ì„œ ë‚´ìš©ì„ ì¶œë ¥í•˜ê¸°ìœ„í•´ ì½˜í…ì¸  íƒ€ì… ì§€ì •
+			// ¼öÁ¤ 39. ¼­ºí¸´¿¡ ³»¿ëÀ» Ãâ·ÂÇÏ±â À§ÇØ ÄÜÅÙÃ÷ Å¸ÀÔ ÁöÁ¤
 			resp.setContentType("text/html;charset=UTF-8");
+			
+			// ¼öÁ¤ 40. getWriter() ¸Ş¼­µå¸¦ ÅëÇØ PrintWriter °´Ã¼ ¾ò¾î¿È
 			PrintWriter writer = resp.getWriter();
 			
+			// ¼öÁ¤ 41. Ç¥ÇöÇÏ°íÀÚ ÇÏ´Â ½ºÅ©¸³Æ® ÄÚµå¸¦ ÇÏ³ªÀÇ ¹®ÀÚ¿­·Î ¸¸µé¾î ¼­ºí¸´¿¡¼­ Áï½Ã Ãâ·ÂÇÔ
+			// history.back() Á÷Àü ÆäÀÌÁö·Î ÀÌµ¿
 			String script = "<script>"
-					+ "		alert('" + msg + "');"
-					+ "		history.back()"
-					+ "</script>";
+							+ "alert('" + msg + "');"
+							+ "history.back();"
+							+ "</script>";
 			writer.print(script);
-		}catch(Exception e) {
-			System.out.println("alertBack ë¬¸ì œ");
-			e.printStackTrace();
-		}
+		} catch (Exception e) { }
 	}
 }

@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../css/ProductDetail.css" rel="stylesheet">
+<link href="../css/ProductDetail.css?v=1" rel="stylesheet">
 </head>
 <body>
 	<jsp:include page="./Header.jsp" />
@@ -27,15 +27,7 @@
 			<input type='button' onclick='count("plus")' value='+'/>
 			<div class='result'>${dto.p_count}</div>
 			<div><span class='result'>${dto.p_count}</span>개</div>
-			
-			
-<!-- 			수량 : <input type="hidden" name="sell_price" value="5500">
-			<input type="text" name="amount" value="1" size="3" max="">
-			<input type="button" value=" + " name="add">
-			<input type="button" value=" - " name="minus"><br>
-			금액 : <input type="text" name="sum" size="11" readonly>원 -->
-			
-			
+			<input type="hidden" id="tprice" value="${dto.p_totalprice}"><!--  -->
 						
 			<div>총 상품금액 : <span id="ptotalprice">${dto.p_totalprice}</span>원</div>
 			<div><span id="pcount">${dto.p_count}</span>개</div>
@@ -44,7 +36,8 @@
 			<div class="content_right">
  
 			</div>
-			
+			<button type="button">구매하기</button>
+			<button>장바구니</button>
 			
 		</div>
 		

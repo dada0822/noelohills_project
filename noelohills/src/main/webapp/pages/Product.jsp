@@ -17,7 +17,7 @@
 	<div class="test1">
 	
 		<c:choose>
-				<c:when test="${ empty cate_product }">
+				<c:when test="${empty cate_product}">
 					<c:forEach items="${productList}" var="total" varStatus="loop">
 						<%-- <input type="hidden" name="p_categorycode" value="${total.p_categorycode}"> --%>
 						<a href="../pages/productDetail.do?p_code=${total.p_code}">

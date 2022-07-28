@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.loginWrap{
+	min-height: 100%;
+    position: relative;
+}
+
+.loginForm{
+	margin-top: 100px;
+    padding-bottom: 195px; /* footer의 높이 */
+}

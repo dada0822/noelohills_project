@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600&display=swap" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/Header.css" rel="stylesheet">
+<link href="../css/Header.css?v=1" rel="stylesheet">
 	<div class="header">
 		<div class="header_in">
 			<div id="logo">
@@ -61,8 +61,8 @@
 			
 			<div class="profile">
 				<ul>
-					<li><a href=""><img src="${pageContext.request.contextPath}/image/header/ico-login.png" alt="login"></a></li>
-					<li><a href=""><img src="${pageContext.request.contextPath}/image/header/ico-login.png" alt="login"></a></li>
+					<li><a href="./login.do"><img src="${pageContext.request.contextPath}/image/header/ico-login.png" alt="login"></a></li>
+					<li><a href="./signup.do"><img src="${pageContext.request.contextPath}/image/header/ico-login.png" alt="signup"></a></li>
 				</ul>
 			</div>
 		</div> <!-- .header_in -->

@@ -1,21 +1,12 @@
 @charset "UTF-8";
 
-.wrap{
+.test{
+	
     min-height: 100%;
     position: relative;
 }
 
-.wrap_1{
+.test1{
 	margin-top: 100px;
     padding-bottom: 195px; /* footer의 높이 */
-}
-
-.wrap_1 #main_img{
-	width: 300px;
-	height: auto;
-}
-
-.wrap_1 #small_img{
-	width: 150px;
-	height: auto;
 }
