@@ -13,6 +13,11 @@ import common.JSFunction;
 public class LoginController extends HttpServlet {
 	
 	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getRequestDispatcher("/pages/Login.jsp").forward(req, resp);
+	}
+	
+	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		String m_id = req.getParameter("m_id");
@@ -26,9 +31,9 @@ public class LoginController extends HttpServlet {
 			HttpSession session = req.getSession();
 			session.setAttribute("m_id", dto.getM_id());
 			
-			JSFunction.alertLocation(resp, dto.getM_id() + "님 환영합니다.", "../pages/Index.jsp");
+			JSFunction.alertLocation(resp, dto.getM_name() + "님 환영합니다.", "../pages/Index.jsp");
 		} else {
-			JSFunction.alertBack(resp, "아이디 혹은 비밀번호가 유효하지 않습니다.");
+			JSFunction.alertBack(resp, "아이디 혹은 비밀번호가 일치하지 않습니다.");
 		}
 		
 	}

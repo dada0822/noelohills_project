@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,6 +65,22 @@
 					<li><a href="./login.do"><img src="${pageContext.request.contextPath}/image/header/ico-login.png" alt="login"></a></li>
 					<li><a href="./signup.do"><img src="${pageContext.request.contextPath}/image/header/ico-login.png" alt="signup"></a></li>
 				</ul>
+				
+				<c:choose>
+            		<c:when test="${sessionScope.m_id eq null}">
+            			<ul>
+	            			<li><a class="login" href="./login.do" title="로그인">로그인</a></li>
+	            			<li><a class="signup" href="./signup.do" title="회원가입">회원가입</a></li>
+	            		</ul>
+            		</c:when>
+            		<c:otherwise>
+            			<ul>
+	            			<li><a class="logout" href="./logout.do" onclick="return confirm('로그아웃하시겠습니까?');">로그아웃</a></li>
+	            			<li><a class="mypage" href="./mypage.do">마이페이지</a></li>
+	            			<li><a class="order" href="./basket.do" title="장바구니">장바구니</a></li>
+	            		</ul>
+            		</c:otherwise>
+            	</c:choose>
 			</div>
 		</div> <!-- .header_in -->
 	</div> <!-- .header -->

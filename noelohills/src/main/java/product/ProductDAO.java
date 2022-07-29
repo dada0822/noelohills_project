@@ -38,7 +38,7 @@ public class ProductDAO extends DBConnPool {
 		
 		String query = "SELECT * FROM ( "
 					+ " SELECT p.*, ROWNUM rNum FROM ( "
-					+ "	SELECT p_code, p_categorycode, p_name, to_char(p_price, '999,999') p_price, "
+					+ "	SELECT p_code, p_categorycode, p_name, p_content, to_char(p_price, '999,999') p_price, "
 					+ "	 to_char(p_totalprice, '999,999,999') p_totalprice, p_count FROM product "
 					+ "	ORDER BY TO_NUMBER(p_code) DESC "
 					+ "	) p "
@@ -57,6 +57,7 @@ public class ProductDAO extends DBConnPool {
 				dto.setP_code(rs.getString("p_code"));
 				dto.setP_categorycode(rs.getString("p_categorycode"));
 				dto.setP_name(rs.getString("P_name"));
+				dto.setP_content(rs.getString("p_content"));
 				dto.setP_price(rs.getString("p_price"));
 				dto.setP_totalprice(rs.getString("p_totalprice"));
 				dto.setP_count(rs.getString("p_count"));
@@ -87,6 +88,7 @@ public class ProductDAO extends DBConnPool {
 //				dto.setP_code(rs.getString("p_code"));
 //				dto.setP_categorycode(rs.getString("p_categorycode"));
 //				dto.setP_name(rs.getString("P_name"));
+//				dto.setP_content(rs.getString("p_content"));
 //				dto.setP_price(rs.getString("p_price"));
 //				dto.setP_totalprice(rs.getString("p_totalprice"));
 //				dto.setP_count(rs.getString("p_count"));
@@ -118,7 +120,8 @@ public class ProductDAO extends DBConnPool {
 				ProductDTO dto = new ProductDTO();
 				dto.setP_code(rs.getString("p_code"));
 				dto.setP_categorycode(rs.getString("p_categorycode"));
-				dto.setP_name(rs.getString("P_name"));
+				dto.setP_name(rs.getString("p_name"));
+				dto.setP_content(rs.getString("p_content"));
 				dto.setP_price(rs.getString("p_price"));
 				dto.setP_totalprice(rs.getString("p_totalprice"));
 				dto.setP_count(rs.getString("p_count"));
@@ -137,7 +140,7 @@ public class ProductDAO extends DBConnPool {
 	public List<ProductDTO> categoryCode() {
 		List<ProductDTO> list = new Vector<ProductDTO>();
 		
-		String query = "select p_categorycode from product GROUP by p_categorycode order by p_categorycode ASC";
+		String query = "select p_categorycode from product GROUP BY p_categorycode order by p_categorycode ASC";
 		
 		try {
 			stmt = con.createStatement();
@@ -175,6 +178,7 @@ public class ProductDAO extends DBConnPool {
 				dto.setP_code(rs.getString("p_code"));
 				dto.setP_categorycode(rs.getString("p_categorycode"));
 				dto.setP_name(rs.getString("p_name"));
+				dto.setP_content(rs.getString("p_content"));
 				dto.setP_price(rs.getString("p_price"));
 				dto.setP_totalprice(rs.getString("p_totalprice"));
 				dto.setP_count(rs.getString("p_count"));

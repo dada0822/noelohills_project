@@ -17,7 +17,7 @@ function showBig(){
 function count(type)  {
 	// 결과를 표시할 element
 	resultElement = document.getElementsByClassName("result");
-	ptotalpriceElement = document.getElementById("ptotalprice"); // 보여질 값
+	ptotalpriceElement = document.getElementById("p_totalprice"); // 보여질 값
 	hiddentpriceElement = document.getElementById("tprice").value; // 진짜 값
 	
 	// 현재 화면에 표시된 값

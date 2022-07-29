@@ -102,4 +102,24 @@
     <url-pattern>/pages/login.do</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>LogoutController</servlet-name>
+    <servlet-class>member.LogoutController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>LogoutController</servlet-name>
+    <url-pattern>/pages/logout.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>BasketController</servlet-name>
+    <servlet-class>basket.BasketController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>BasketController</servlet-name>
+    <url-pattern>/pages/basket.do</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

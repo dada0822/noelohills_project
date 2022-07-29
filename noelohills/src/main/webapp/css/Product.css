@@ -11,7 +11,17 @@
     padding-bottom: 195px; /* footer의 높이 */
 }
 
-.test1 img{
+.test .subimg{
+	width: 100%;
+}
+
+.test1 a img{
 	width: 300px;
 	height: auto;
 }
+
+.tab_menu{position:relative;}
+.tab_menu .list{overflow:hidden;}
+.tab_menu .list li{float:left; margin-right:14px;}
+.tab_menu .list .btn{font-size:13px;}
+.tab_menu .list li.is_on .btn{font-weight:bold; color:green;}

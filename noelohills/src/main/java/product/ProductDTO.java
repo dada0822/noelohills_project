@@ -4,6 +4,7 @@ public class ProductDTO {
 	private String p_code;
 	private String p_categorycode;
 	private String p_name;
+	private String p_content;
 	private String p_price;
 	private String p_totalprice;
 	private String p_count;
@@ -25,6 +26,12 @@ public class ProductDTO {
 	}
 	public void setP_name(String p_name) {
 		this.p_name = p_name;
+	}
+	public String getP_content() {
+		return p_content;
+	}
+	public void setP_content(String p_content) {
+		this.p_content = p_content;
 	}
 	public String getP_price() {
 		return p_price;
