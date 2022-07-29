@@ -12,7 +12,23 @@
 	
 	<!-- 장바구니 비어있을 때랑 비어있지 않을 때 -->
 	<div>
-		<p>d으아ㅣㅓㄹ;</p>
+		
+		<c:choose> 
+			<c:when test="${empty basketList}">
+				<p>등록된 게시물이 없습니다.</p>
+			</c:when>
+			<c:otherwise>
+				<c:forEach items="${basketList}" var="total" varStatus="loop">
+					<a href="./product.do?p_code=${total.p_code}">
+						<img src="${pageContext.request.contextPath}/image/product/${total.p_name}_1.jpg" alt="">
+						<span>${total.p_name}</span>
+					</a>
+					<p>${total.b_count}</p>
+					<p>${total.b_price}원</p>
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>
+
 	</div>
 	
 	<jsp:include page="./Footer.jsp" />

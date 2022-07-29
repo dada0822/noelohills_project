@@ -45,7 +45,7 @@
 				<c:forEach items="${productList}" var="total" varStatus="loop">
 					<%-- <input type="hidden" name="p_categorycode" value="${total.p_categorycode}"> --%>
 					<a href="../pages/productDetail.do?p_code=${total.p_code}">
-						<img src="${pageContext.request.contextPath}/image/product/${total.p_name}_1.jpg">
+						<img src="${pageContext.request.contextPath}/image/product/${total.p_name}_1.jpg" alt="">
 						<br>
 						<span>${total.p_name}</span>
 					</a>
@@ -66,7 +66,7 @@
 				<c:forEach items="${cate_product}" var="total" varStatus="loop">
 					<input type="hidden" name="p_categorycode" value="${total.p_categorycode}">
 					<a href="../pages/productDetail.do?p_code=${total.p_code}">
-						<img src="${pageContext.request.contextPath}/image/product/${total.p_name}_1.jpg">
+						<img src="${pageContext.request.contextPath}/image/product/${total.p_name}_1.jpg" alt="">
 						<br>
 						<span>${total.p_name}</span>
 					</a>
