@@ -107,7 +107,7 @@ public class ProductDAO extends DBConnPool {
 		List<ProductDTO> list = new Vector<ProductDTO>();
 		
 		String query = "SELECT p_code, p_categorycode, p_name, p_content, TO_CHAR(p_price, '999,999') p_price, "
-					+ " TO_CHAR(p_totalprice, '999,999,999') p_totalprice, p_count "
+					+ " TO_CHAR(p_totalprice, '999,999') p_totalprice, p_count "
 					+ " FROM product WHERE p_categorycode=? "
 					+ " ORDER BY TO_NUMBER(p_code) DESC";
 		
@@ -166,7 +166,7 @@ public class ProductDAO extends DBConnPool {
 		ProductDTO dto = new ProductDTO();
 		
 		String query = "SELECT p_code, p_categorycode, p_name, p_content, to_char(p_price, '999,999') p_price, "
-					+ "	 to_char(p_totalprice, '999,999,999') p_totalprice, p_count " 
+					+ "	 to_char(p_totalprice, '999,999') p_totalprice, p_count " 
 					+ " FROM product WHERE p_code=?";
 		
 		try {

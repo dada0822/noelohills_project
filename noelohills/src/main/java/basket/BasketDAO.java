@@ -15,12 +15,7 @@ public class BasketDAO extends DBConnPool {
 	public BasketDTO memberInfo(String m_id) {
 		BasketDTO dto = new BasketDTO();
 		
-		String query = "SELECT b.m_code "
-					+ " FROM basket b, member m "
-					+ " WHERE b.m_code = m.m_code "
-					+ " AND m.m_id=? "
-					+ "	GROUP BY b.m_code";
-		
+		String query = "select m_code From member where m_id=?";
 		try {
 			psmt = con.prepareStatement(query);
 			psmt.setString(1, m_id);
@@ -42,7 +37,7 @@ public class BasketDAO extends DBConnPool {
 	public int putProduct(BasketDTO dto) {
 		int result = 0;
 		
-		String query = "INSERT INTO (b_code, p_code, m_code, p_name, b_count, b_price) basket VALUES(basket_b_code_seq.nextval, ?, ?, ?, ?, ?)";
+		String query = "INSERT INTO basket (b_code, p_code, m_code, p_name, b_count, b_price) VALUES(basket_b_code_seq.nextval, ?, ?, ?, ?, ?)";
 		
 		try {
 			
@@ -66,7 +61,9 @@ public class BasketDAO extends DBConnPool {
 	public List<BasketDTO> basketList(String m_code) {
 		List<BasketDTO> list = new Vector<BasketDTO>();
 		
-		String query = "SELECT * FROM basket WHERE m_code=?";
+		String query = "SELECT b_code, p_code, m_code,"
+				+ " p_name, b_count, to_char(b_price, '999,999,999') b_price "
+				+ " FROM basket WHERE m_code=? ORDER BY TO_NUMBER(p_code) DESC";
 		
 		try {
 			psmt = con.prepareStatement(query);
@@ -91,5 +88,6 @@ public class BasketDAO extends DBConnPool {
 		return list;
 	} 
 	
+
 	
 }
