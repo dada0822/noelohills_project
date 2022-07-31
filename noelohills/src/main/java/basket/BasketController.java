@@ -68,12 +68,19 @@ public class BasketController extends HttpServlet {
 			int pos = -1;
 			// 제품이 있다면
 			
+			System.out.println("*******");
+			System.out.println((Integer.parseInt(basketList.get(0).getB_count()) + Integer.parseInt(b_count)));
+			System.out.println(Integer.parseInt((basketList.get(0).getB_price().replaceAll(",", "")).trim()));
+			System.out.println(Integer.parseInt((default_p_totalprice.replaceAll(",", "")).trim())*(Integer.parseInt(basketList.get(0).getB_count()) + Integer.parseInt(b_count)));
+			System.out.println("*******");
+			
+			for(int i = 0; i < basketList.size(); i++) {
+				dto = basketList.get(i);
 				if(dto.getP_name().equals(p_name1)) {
 					pos = 1;
-					for(int i = 0; i < basketList.size(); i++) {
-						dto = basketList.get(i);
-					dto.setB_count(Integer.toString((Integer.parseInt(dto.getB_count()) + Integer.parseInt(b_count)))); // 수량 증가
-					dto.setB_price(Integer.toString(Integer.parseInt((basketList.get(i).getB_price().replaceAll(",", "")).trim()) + (Integer.parseInt((default_p_totalprice.replaceAll(",", "")).trim())*(Integer.parseInt(dto.getB_count())))));
+					
+					//dto.setB_count(Integer.toString((Integer.parseInt(dto.getB_count()) + Integer.parseInt(b_count)))); // 수량 증가
+					//dto.setB_price(Integer.toString(Integer.parseInt((basketList.get(i).getB_price().replaceAll(",", "")).trim()) + (Integer.parseInt((default_p_totalprice.replaceAll(",", "")).trim())*(Integer.parseInt(dto.getB_count())))));
 					
 					System.out.println(dto.getB_count() + "오오" + dto.getB_price());
 					//System.out.println(Integer.parseInt((basketList.get(0).getB_price().replaceAll(",", "")).trim()) + (Integer.parseInt((default_p_totalprice.replaceAll(",", "")).trim())*(Integer.parseInt(dto.getB_count() + 1))));
