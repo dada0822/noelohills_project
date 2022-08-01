@@ -54,8 +54,10 @@ public class BasketController extends HttpServlet {
 			String m_code = dto.getM_code();
 			
 			
-			
-			List<BasketDTO> basketList = dao.basketList(m_code); // 장바구니 목록 조회
+			System.out.println(dto.getB_count());
+			System.out.println(dto.getM_code()); // d얘만 나옴
+			System.out.println(dto.getB_price());
+			List<BasketDTO> basketList = dao.basketList(m_code); // 장바구니 목록 조회(저장된 값들 가져오기)
 			
 			String default_p_totalprice = req.getParameter("default_p_totalprice");
 			String p_totalprice1 = req.getParameter("p_totalprice");
@@ -63,31 +65,43 @@ public class BasketController extends HttpServlet {
 			String b_count = req.getParameter("p_count");
 			String p_name1 = req.getParameter("p_name");
 			
-			String p_totalprice = p_totalprice1.replaceAll(",", "");
+			String p_totalprice = p_totalprice1.replaceAll(",", ""); 
 			
 			int pos = -1;
 			// 제품이 있다면
-			
-			System.out.println("*******");
-			System.out.println((Integer.parseInt(basketList.get(0).getB_count()) + Integer.parseInt(b_count)));
-			System.out.println(Integer.parseInt((basketList.get(0).getB_price().replaceAll(",", "")).trim()));
-			System.out.println(Integer.parseInt((default_p_totalprice.replaceAll(",", "")).trim())*(Integer.parseInt(basketList.get(0).getB_count()) + Integer.parseInt(b_count)));
-			System.out.println("*******");
 			
 			for(int i = 0; i < basketList.size(); i++) {
 				dto = basketList.get(i);
 				if(dto.getP_name().equals(p_name1)) {
 					pos = 1;
+					System.out.println("여기까지 오는가?");
+					if((Integer.parseInt(basketList.get(i).getB_count()) + Integer.parseInt(b_count)) < 5) {
+						System.out.println((Integer.parseInt(basketList.get(i).getB_count()) + Integer.parseInt(b_count)));
+						System.out.println(Integer.parseInt((basketList.get(i).getB_price().replaceAll(",", "")).trim()));
+						System.out.println(Integer.parseInt((default_p_totalprice.replaceAll(",", "")).trim()));
+						System.out.println(Integer.parseInt(b_count));
+						System.out.println("*******#");
+						
+						String b_price = Integer.toString(Integer.parseInt((default_p_totalprice.replaceAll(",", "")).trim())*(Integer.parseInt(basketList.get(i).getB_count()) + Integer.parseInt(b_count)));
+						
+						
+						dto.setB_count(Integer.toString(Integer.parseInt(basketList.get(i).getB_count()) + Integer.parseInt(b_count)));
+						dto.setB_price(b_price);
+
+						System.out.println("dto.get_b_count() ==> " + dto.getB_count());
+						System.out.println("dto.getB_price() ==> " + dto.getB_price());
+						
+						int result = dao.updateCountPrice(dto);
+						System.out.println("result >>>" + result);
+						break;
+					} else {
+						System.out.println("여기까지 오는가?22");
+						JSFunction.alertBack(resp, "제품 최대 주문 수량을 초과했습니다.");
+						break;
+					}
 					
-					//dto.setB_count(Integer.toString((Integer.parseInt(dto.getB_count()) + Integer.parseInt(b_count)))); // 수량 증가
-					//dto.setB_price(Integer.toString(Integer.parseInt((basketList.get(i).getB_price().replaceAll(",", "")).trim()) + (Integer.parseInt((default_p_totalprice.replaceAll(",", "")).trim())*(Integer.parseInt(dto.getB_count())))));
-					
-					System.out.println(dto.getB_count() + "오오" + dto.getB_price());
-					//System.out.println(Integer.parseInt((basketList.get(0).getB_price().replaceAll(",", "")).trim()) + (Integer.parseInt((default_p_totalprice.replaceAll(",", "")).trim())*(Integer.parseInt(dto.getB_count() + 1))));
-					break;
 				}
 			}
-										// 기존값 + 기본값(상품 하나 값)
 			
 			// 동일한 제품이 없다면
 			if(pos == -1) {

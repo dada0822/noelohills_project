@@ -57,13 +57,76 @@ public class BasketDAO extends DBConnPool {
 		return result;
 	}
 	
-	// 장바구니 조회
-	public List<BasketDTO> basketList(String m_code) {
+//	// 장바구니 조회
+//	public List<BasketDTO> basketList(String m_code) {
+//		List<BasketDTO> list = new Vector<BasketDTO>();
+//		
+//		String query = "SELECT b_code, p_code, m_code,"
+//				+ " p_name, b_count, to_char(b_price, '999,999,999') b_price "
+//				+ " FROM basket WHERE m_code=? ORDER BY TO_NUMBER(p_code) DESC";
+//		
+//		try {
+//			psmt = con.prepareStatement(query);
+//			psmt.setString(1, m_code);
+//			rs = psmt.executeQuery();
+//			while(rs.next()) {
+//				BasketDTO dto = new BasketDTO();
+//				
+//				dto.setB_code(rs.getString("b_code"));
+//				dto.setP_code(rs.getString("p_code"));
+//				dto.setM_code(rs.getString("m_code"));
+//				dto.setP_name(rs.getString("p_name"));
+//				dto.setB_count(rs.getString("b_count"));
+//				dto.setB_price(rs.getString("b_price"));
+//				
+//				list.add(dto);
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			System.out.println("장바구니 리스트 조회 중 예외 발생");
+//		}
+//		return list;
+//	} 
+	
+	
+	// 장바구니 조회(상품 거칠 경우)
+	public List<BasketDTO> basketList(BasketDTO dto) {
 		List<BasketDTO> list = new Vector<BasketDTO>();
 		
 		String query = "SELECT b_code, p_code, m_code,"
 				+ " p_name, b_count, to_char(b_price, '999,999,999') b_price "
 				+ " FROM basket WHERE m_code=? ORDER BY TO_NUMBER(p_code) DESC";
+		
+		try {
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, dto.getM_code());
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				//BasketDTO dto = new BasketDTO();
+				
+				dto.setB_code(rs.getString("b_code"));
+				dto.setP_code(rs.getString("p_code"));
+				dto.setM_code(rs.getString("m_code"));
+				dto.setP_name(rs.getString("p_name"));
+				//dto.setB_count(rs.getString("b_count"));
+				dto.setB_price(rs.getString("b_price"));
+				
+				list.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("장바구니 리스트 조회 중 예외 발생");
+		}
+		return list;
+	} 
+	
+	// 장바구니 조회(안 거칠 경우)
+	public List<BasketDTO> basketList(String m_code) {
+		List<BasketDTO> list = new Vector<BasketDTO>();
+		
+		String query = "SELECT b_code, p_code, m_code,"
+				+ " p_name, b_count, to_char(b_price, '999,999,999') b_price "
+				+ " FROM basket WHERE m_code=? ORDER BY TO_NUMBER(b_code) DESC";
 		
 		try {
 			psmt = con.prepareStatement(query);
@@ -88,6 +151,23 @@ public class BasketDAO extends DBConnPool {
 		return list;
 	} 
 	
-
-	
+	// 제품 개수와 금액 변경
+	public int updateCountPrice(BasketDTO dto) {
+		int result = 0;
+		String query = "UPDATE basket SET b_count=?, b_price=? WHERE m_code=?";
+		
+		try {
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, dto.getB_count());
+			psmt.setString(2, dto.getB_price());
+			psmt.setString(3, dto.getM_code());
+			
+			result = psmt.executeUpdate();
+			System.out.println(result + "result는!");
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("업데이트 중 예외 발생");
+		}
+		return result;
+	}
 }
