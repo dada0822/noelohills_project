@@ -170,4 +170,24 @@ public class BasketDAO extends DBConnPool {
 		}
 		return result;
 	}
+	
+	// 총 상품금액
+	public String totalPrice(String m_code) {
+		String totalPrice = "";
+		
+		String query = "SELECT TO_CHAR(SUM(b_price), '999,999,999') b_price FROM basket WHERE m_code=?";
+		
+		try {
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, m_code);
+			rs = psmt.executeQuery();
+			rs.next();
+			totalPrice = rs.getString(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("총 상품 금액 계산 중 예외 발생");
+		}
+		return totalPrice;
+	}
 }

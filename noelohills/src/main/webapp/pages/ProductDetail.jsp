@@ -34,7 +34,7 @@
 			
 			<!-- !! --><input type="text" name="p_totalprice" id="p_totalprice" value="${dto.p_totalprice}">
 			
-			<button type="button" onclick="location.href='./buy.do?p_code${dto.p_code}'">구매하기</button>
+			<button type="button" onclick="location.href='./order.do?m_code${dto.m_code}'">구매하기</button>
 
 			<button type="submit">장바구니</button>
 

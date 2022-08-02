@@ -1,7 +1,9 @@
 package basket;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,6 +20,8 @@ public class BasketController extends HttpServlet {
 		
 		HttpSession session = req.getSession();
 		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
 		if (!(session.getAttribute("m_id") == null)) { // 로그인되어있다면!
 			
 			String m_id = (String) session.getAttribute("m_id");
@@ -30,7 +34,14 @@ public class BasketController extends HttpServlet {
 			System.out.println("회원코드가뵤" + m_code);
 			List<BasketDTO> basketList2 = dao.basketList(m_code); // 장바구니 조회 
 			
+			String totalprice = dao.totalPrice(m_code);
+			map.put("totalprice", totalprice);
+			
+			dao.close();
+			
 			req.setAttribute("basketList2", basketList2);
+			req.setAttribute("map", map);
+			
 			req.getRequestDispatcher("/pages/Basket.jsp").forward(req, resp);
 
 		} else {
@@ -43,6 +54,7 @@ public class BasketController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("갹갹갹");
 		HttpSession session = req.getSession();
+		Map<String, Object> map = new HashMap<String, Object>();
 		
 		if (!(session.getAttribute("m_id") == null)) {
 			String m_id = (String) session.getAttribute("m_id");
@@ -95,9 +107,9 @@ public class BasketController extends HttpServlet {
 						System.out.println("result >>>" + result);
 						break;
 					} else {
-						System.out.println("여기까지 오는가?22");
+						System.out.println("으갸갸갸");
 						JSFunction.alertBack(resp, "제품 최대 주문 수량을 초과했습니다.");
-						break;
+						return;
 					}
 					
 				}
@@ -127,12 +139,16 @@ public class BasketController extends HttpServlet {
 			
 			List<BasketDTO> basketList2 = dao.basketList(m_code); // 장바구니 목록 조회
 			
+			String totalprice = dao.totalPrice(m_code);
+			
+			map.put("totalprice", totalprice);
 			dao.close();
 	
 			
 			req.setAttribute("basketList", basketList);
 			req.setAttribute("basketList2", basketList2);
-			
+			req.setAttribute("map", map);
+
 			req.getRequestDispatcher("/pages/Basket.jsp").forward(req, resp);
 		
 		} else {

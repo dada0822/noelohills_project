@@ -28,6 +28,9 @@
 					</c:forEach>
 				</c:otherwise>
 			</c:choose>
+			총합 : ${map.totalprice}
+			<input type="button" onclick="location.href='./order.do'" value="주문하기">
+			<input type="button" onclick="location.href='./product.do'" value="쇼핑 계속하기">
 		</form>
 	</div>
 	
