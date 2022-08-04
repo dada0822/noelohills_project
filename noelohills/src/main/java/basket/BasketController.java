@@ -32,6 +32,8 @@ public class BasketController extends HttpServlet {
 			// String m_code = dao.memberInfo(m_id); // 회원 코드 뽑아내기
 			String m_code = dto.getM_code();
 			System.out.println("회원코드가뵤" + m_code);
+			
+			
 			List<BasketDTO> basketList2 = dao.basketList(m_code); // 장바구니 조회 
 			
 			String totalprice = dao.totalPrice(m_code);
@@ -87,7 +89,7 @@ public class BasketController extends HttpServlet {
 				if(dto.getP_name().equals(p_name1)) {
 					pos = 1;
 					System.out.println("여기까지 오는가?");
-					if((Integer.parseInt(basketList.get(i).getB_count()) + Integer.parseInt(b_count)) < 5) {
+					if((Integer.parseInt(basketList.get(i).getB_count()) + Integer.parseInt(b_count)) <= 5) {
 						System.out.println((Integer.parseInt(basketList.get(i).getB_count()) + Integer.parseInt(b_count)));
 						System.out.println(Integer.parseInt((basketList.get(i).getB_price().replaceAll(",", "")).trim()));
 						System.out.println(Integer.parseInt((default_p_totalprice.replaceAll(",", "")).trim()));
@@ -132,9 +134,9 @@ public class BasketController extends HttpServlet {
 				
 				
 				int result = dao.putProduct(dto); // 제품 테이블에 insert
-				if(result == 1) {
-					
-				}
+//				if(result == 1) {
+//					
+//				}
 			}
 			
 			List<BasketDTO> basketList2 = dao.basketList(m_code); // 장바구니 목록 조회
@@ -156,5 +158,4 @@ public class BasketController extends HttpServlet {
 		}
 	}
 	
-
 }

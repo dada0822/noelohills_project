@@ -122,4 +122,24 @@
     <url-pattern>/pages/basket.do</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>BasketDeleteController</servlet-name>
+    <servlet-class>basket.BasketDeleteController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>BasketDeleteController</servlet-name>
+    <url-pattern>/pages/basketDelete.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>OrderpageController</servlet-name>
+    <servlet-class>order.OrderpageController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>OrderpageController</servlet-name>
+    <url-pattern>/pages/order.do</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

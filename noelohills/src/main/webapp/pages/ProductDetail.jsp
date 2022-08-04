@@ -15,7 +15,7 @@
 		<form class="wrap_1" method="post" action="./basket.do?p_code${dto.p_code}">
 			<input type="hidden" name="p_code" value="${dto.p_code}">
 			<input type="hidden" name="p_name" value="${dto.p_name}">
-			<input type="hidden" name="default_p_totalprice" value="${dto.p_totalprice}">
+			<input type="hidden" name="default_p_totalprice" value="${dto.p_totalprice}"><!-- 기본값 -->
 			
 			<input type="hidden" id="tprice" value="${dto.p_totalprice}"><!-- 실제 금액 -->
 			
@@ -30,18 +30,18 @@
 			<input type='button' onclick='count("minus")' value='-'/>
 			<input type='button' onclick='count("plus")' value='+'/>
 			
-			<!-- !! --><input type="text" name="p_count" id="p_count" value="${dto.p_count}">
+			<!-- 개수 --><input type="text" name="p_count" id="p_count" value="${dto.p_count}">
 			
-			<!-- !! --><input type="text" name="p_totalprice" id="p_totalprice" value="${dto.p_totalprice}">
+			<!-- 개수에 따른 금액 --><input type="text" name="p_totalprice" id="p_totalprice" value="${dto.p_totalprice}">
 			
-			<button type="button" onclick="location.href='./order.do?m_code${dto.m_code}'">구매하기</button>
+			<button type="submit" onclick="form.action='./order.do'">구매하기</button>
 
 			<button type="submit">장바구니</button>
 
 		</form>
 	</div>
 	
-	<%-- <jsp:include page="./Footer.jsp" /> --%>
+	<jsp:include page="./Footer.jsp" />
 	<script src="${pageContext.request.contextPath}/js/ProductDetail.js"></script>
 </body>
 </html>

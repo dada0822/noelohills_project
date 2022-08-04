@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.basketpage{
+	min-height: 100%;
+    position: relative;
+}
+
+.basketFrm{
+	margin-top: 100px;
+    padding-bottom: 195px; /* footer의 높이 */
+}
+
+.basketFrm img{
+	width: 100px;
+	height: auto;
+}

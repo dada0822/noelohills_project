@@ -1,3 +1,6 @@
+<%@page import="product.ProductDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="product.ProductDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -76,7 +79,7 @@
             		<c:otherwise>
             			<ul>
 	            			<li><a class="logout" href="./logout.do" onclick="return confirm('로그아웃하시겠습니까?');">로그아웃</a></li>
-	            			<li><a class="mypage" href="./mypage.do">마이페이지</a></li>
+	            			<li><a class="mypage" href="#">마이페이지</a></li>
 	            			<li><a class="order" href="./basket.do" title="장바구니">장바구니</a></li>
 	            		</ul>
             		</c:otherwise>
