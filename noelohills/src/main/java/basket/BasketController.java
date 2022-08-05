@@ -88,7 +88,6 @@ public class BasketController extends HttpServlet {
 				dto = basketList.get(i);
 				if(dto.getP_name().equals(p_name1)) {
 					pos = 1;
-					System.out.println("여기까지 오는가?");
 					if((Integer.parseInt(basketList.get(i).getB_count()) + Integer.parseInt(b_count)) <= 5) {
 						System.out.println((Integer.parseInt(basketList.get(i).getB_count()) + Integer.parseInt(b_count)));
 						System.out.println(Integer.parseInt((basketList.get(i).getB_price().replaceAll(",", "")).trim()));

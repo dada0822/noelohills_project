@@ -142,4 +142,13 @@
     <url-pattern>/pages/order.do</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>OrderDetailController</servlet-name>
+    <servlet-class>order.OrderDetailController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>OrderDetailController</servlet-name>
+    <url-pattern>/pages/orderdetail.do</url-pattern>
+  </servlet-mapping>
 </web-app>

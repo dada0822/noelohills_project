@@ -140,7 +140,7 @@ public class ProductDAO extends DBConnPool {
 	public List<ProductDTO> categoryCode() {
 		List<ProductDTO> list = new Vector<ProductDTO>();
 		
-		String query = "select p_categorycode from product GROUP BY p_categorycode order by p_categorycode ASC";
+		String query = "SELECT p_categorycode FROM product GROUP BY p_categorycode ORDER BY p_categorycode ASC";
 		
 		try {
 			stmt = con.createStatement();

@@ -46,7 +46,7 @@ public class ProductController extends HttpServlet {
 		List<ProductDTO> cate_product = dao.categoryProductList(p_categorycode); // 카테고리 별로 상품 정렬
 		
 		List<ProductDTO> p_catecode = dao.categoryCode(); // 카테고리 코드 따오기
-
+		
 		String pagingImg = BoardPage.pagingStr(totalCount, pageSize, blockPage, pageNum, "./product.do");
 	
 		map.put("pagingImg", pagingImg);

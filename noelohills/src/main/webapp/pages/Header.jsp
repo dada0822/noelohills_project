@@ -4,6 +4,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+	ProductDAO dao = new ProductDAO();
+	List<ProductDTO> p_catecode = dao.categoryCode(); // 카테고리코드 뽑아오기
+	dao.close();
+%>
+
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,10 +47,10 @@
 						<a href="./product.do">SHOP</a>
 						<ul class="sub_nav">
 							<li><a href="./product.do">ALL PRODUCTS</a></li>
-							<li><a href="./product.do?p_categorycode=${p_catecode.get(0).p_categorycode}">BABY</a></li>
-							<li><a href="./product.do?p_categorycode=${p_catecode.get(1).p_categorycode}">FAMILY</a></li>
-							<li><a href="./product.do?p_categorycode=${p_catecode.get(2).p_categorycode}">BATH GOODS</a></li>
-							<li><a href="./product.do?p_categorycode=${p_catecode.get(3).p_categorycode}">PRESENTS</a></li>
+							<li><a href="./product.do?p_categorycode=<%=p_catecode.get(0).getP_categorycode()%>">BABY</a></li>
+							<li><a href="./product.do?p_categorycode=<%=p_catecode.get(1).getP_categorycode()%>">FAMILY</a></li>
+							<li><a href="./product.do?p_categorycode=<%=p_catecode.get(2).getP_categorycode()%>">BATH GOODS</a></li>
+							<li><a href="./product.do?p_categorycode=<%=p_catecode.get(3).getP_categorycode()%>">PRESENTS</a></li>
 						</ul>
 					</li>
 					<li>
@@ -79,7 +85,7 @@
             		<c:otherwise>
             			<ul>
 	            			<li><a class="logout" href="./logout.do" onclick="return confirm('로그아웃하시겠습니까?');">로그아웃</a></li>
-	            			<li><a class="mypage" href="#">마이페이지</a></li>
+	            			<li><a class="mypage" href="./order.do">주문내역</a></li>
 	            			<li><a class="order" href="./basket.do" title="장바구니">장바구니</a></li>
 	            		</ul>
             		</c:otherwise>

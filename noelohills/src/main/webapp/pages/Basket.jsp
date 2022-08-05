@@ -19,6 +19,7 @@
 			<c:choose> 
 				<c:when test="${empty basketList2}">
 					<p>장바구니에 담긴 상품이 없습니다.</p>
+					<input type="button" onclick="location.href='./product.do'" value="음">
 				</c:when>
 				<c:otherwise>
 					<c:forEach items="${basketList2}" var="total" varStatus="loop">
@@ -36,7 +37,7 @@
 						</a>
 						<div>${total.b_count}
 						${total.b_price}원</div>
-						<input type="button" onclick="location.href='./basketDelete.do?p_code=${basketList2.get(loop.index).p_code}'" value="삭제하기">
+						<input type="button" onclick="location.href='./basketDelete.do?p_code=${total.p_code}'" value="삭제하기">
 						<br>
 					</c:forEach>
 					
