@@ -1,0 +1,16 @@
+@charset "EUC-KR";
+
+.orderList{
+	min-height: 100%;
+    position: relative;
+}
+
+.order_l{
+	margin-top: 100px;
+    padding-bottom: 195px; /* footer¿« ≥Ù¿Ã */
+}
+
+.order_l img{
+	width: 100px;
+	height: auto;
+}

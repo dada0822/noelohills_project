@@ -1,0 +1,52 @@
+package order;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import basket.BasketDAO;
+import basket.BasketDTO;
+
+public class OrderDetailController extends HttpServlet {
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		String o_code = req.getParameter("o_code");
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		HttpSession session = req.getSession();
+	
+		String m_id = (String) session.getAttribute("m_id");
+		BasketDAO b_dao = new BasketDAO();
+		
+		BasketDTO b_dto = b_dao.memberInfo(m_id);
+		String m_code = b_dto.getM_code();
+		
+		OrderDAO dao = new OrderDAO();
+		
+		List<OrderDTO> orderDetail = dao.orderListDetails(m_code, o_code);
+		int ttprice = 0;
+		for(int i=0; i<orderDetail.size(); i++) {
+			ttprice += Integer.parseInt((orderDetail.get(i).getO_price().replace(",", "")).trim());
+		}
+		String tprice = Integer.toString(ttprice);
+		
+		System.out.println("tprice =>" + tprice);
+		
+		tprice = tprice.replaceAll("\\B(?=(\\d{3})+(?!\\d))", ",");
+		
+		map.put("tprice", tprice);
+		req.setAttribute("map", map);
+		req.setAttribute("orderDetail", orderDetail);
+		req.getRequestDispatcher("/pages/OrderDetails.jsp").forward(req, resp);
+	}
+}
