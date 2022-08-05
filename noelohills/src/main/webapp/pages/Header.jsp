@@ -70,23 +70,18 @@
 			</nav>
 			
 			<div class="profile">
-				<ul>
-					<li><a href="./login.do"><img src="${pageContext.request.contextPath}/image/header/ico-login.png" alt="login"></a></li>
-					<li><a href="./signup.do"><img src="${pageContext.request.contextPath}/image/header/ico-login.png" alt="signup"></a></li>
-				</ul>
-				
 				<c:choose>
             		<c:when test="${sessionScope.m_id eq null}">
             			<ul>
-	            			<li><a class="login" href="./login.do" title="로그인">로그인</a></li>
-	            			<li><a class="signup" href="./signup.do" title="회원가입">회원가입</a></li>
+	            			<li><a class="login" href="./login.do" title="로그인"><img src="${pageContext.request.contextPath}/image/header/login.png" alt="login"></a></li>
+	            			<li><a class="signup" href="./signup.do" title="회원가입"><img src="${pageContext.request.contextPath}/image/header/signup.png" alt="signup"></a></li>
 	            		</ul>
             		</c:when>
             		<c:otherwise>
             			<ul>
-	            			<li><a class="logout" href="./logout.do" onclick="return confirm('로그아웃하시겠습니까?');">로그아웃</a></li>
-	            			<li><a class="mypage" href="./order.do">주문내역</a></li>
-	            			<li><a class="order" href="./basket.do" title="장바구니">장바구니</a></li>
+	            			<li><a class="logout" href="./logout.do" title="로그아웃" onclick="return confirm('로그아웃하시겠습니까?');"><img src="${pageContext.request.contextPath}/image/header/logout.png" alt="logout"></a></li>
+	            			<li><a class="mypage" href="./order.do" title="주문내역"><img src="${pageContext.request.contextPath}/image/header/shopping-list.png" alt="orderlist"></a></li>
+	            			<li><a class="order" href="./basket.do" title="장바구니"><img src="${pageContext.request.contextPath}/image/header/cart.png" alt="cart"></a></li>
 	            		</ul>
             		</c:otherwise>
             	</c:choose>

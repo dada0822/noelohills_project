@@ -113,6 +113,7 @@
 .profile img{
 	width: auto;
 	height: 24px;
+	filter: invert(46%) sepia(11%) saturate(242%) hue-rotate(169deg) brightness(97%) contrast(90%);
 }
 
 nav>ul>li:hover .sub_nav{
