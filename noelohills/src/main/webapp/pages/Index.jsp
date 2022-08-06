@@ -11,7 +11,7 @@
 	<jsp:include page="./Header.jsp" />
 	
 	<div class="index">
-		<div class="indes">
+		<div class="index_">
 			<%-- <div class="kind_wrap">
 			  <div class="kind_slider">
 			    <ul class="slider">
@@ -29,77 +29,57 @@
 			  </div>
 			</div> --%>
 			
-			
-		<div class="slideshow-container">
-
-			<div class="mySlides fade">
-				  <div class="numbertext">1 / 6</div>
-				  <img src="${pageContext.request.contextPath}/image/index/slide1.png" style="width:100%">
-				  <div class="text">Caption One</div>
-			</div>
-			
-			<div class="mySlides fade">
-			  <div class="numbertext">2 / 6</div>
-			  <img src="${pageContext.request.contextPath}/image/index/slide2.png" style="width:100%">
-			  <div class="text">Caption Two</div>
-			</div>
-			
-			<div class="mySlides fade">
-			  <div class="numbertext">3 / 6</div>
-			  <img src="${pageContext.request.contextPath}/image/index/slide3.png" style="width:100%">
-			  <div class="text">Caption Three</div>
-			</div>
-			
-			<div class="mySlides fade">
-			  <div class="numbertext">4 / 6</div>
-			  <img src="${pageContext.request.contextPath}/image/index/slide4.png" style="width:100%">
-
-			</div>
-			
-			<div class="mySlides fade">
-			  <div class="numbertext">5 / 6</div>
-			  <img src="${pageContext.request.contextPath}/image/index/slide5.png" style="width:100%">
-			  <div class="text">Caption Three</div>
-			</div>
-			
-			<div class="mySlides fade">
-			  <div class="numbertext">6 / 6</div>
-			  <img src="${pageContext.request.contextPath}/image/index/slide6.png" style="width:100%">
-			  <div class="text">Caption Three</div>
-			</div>
-			
-			</div>
-			<br>
-			
-			<div style="text-align:center">
-			  <span class="dot"></span> 
-			  <span class="dot"></span> 
-			  <span class="dot"></span> 
-			</div>
+		
+		    <div class="slideshow-container">
+		
+		      <!-- Full-width images with number and caption text -->
+		      <div class="mySlides fade">
+		        <img src="${pageContext.request.contextPath}/image/index/slide1.png" style="width:100%">
+		      </div>
+		
+		      <div class="mySlides fade">
+		        <img src="${pageContext.request.contextPath}/image/index/slide2.png" style="width:100%">
+		      </div>
+		
+		      <div class="mySlides fade">
+		        <img src="${pageContext.request.contextPath}/image/index/slide3.png" style="width:100%">
+		      </div>
+		
+		      <div class="mySlides fade">
+		        <img src="${pageContext.request.contextPath}/image/index/slide4.png" style="width:100%">
+		      </div>
+		
+		      <div class="mySlides fade">
+		        <img src="${pageContext.request.contextPath}/image/index/slide5.png" style="width:100%">
+		      </div>
+		
+		      <div class="mySlides fade">
+		        <img src="${pageContext.request.contextPath}/image/index/slide6.png" style="width:100%">
+		      </div>
+		
+		      <!-- Next and previous buttons -->
+		      <a class="prev" onclick="moveSlides(-1)">&#10094;</a>
+		      <a class="next" onclick="moveSlides(1)">&#10095;</a>
+		    </div>
+		    <br/>
+		
+		    <!-- The dots/circles -->
+		    <div style="text-align:center">
+		      <span class="dot" onclick="currentSlide(0)"></span>
+		      <span class="dot" onclick="currentSlide(1)"></span>
+		      <span class="dot" onclick="currentSlide(2)"></span>
+		      <span class="dot" onclick="currentSlide(3)"></span>
+		      <span class="dot" onclick="currentSlide(4)"></span>
+		      <span class="dot" onclick="currentSlide(5)"></span>
+		    </div>
+    
+    
 			
 		</div>
 	</div>
 	
-	<jsp:include page="./Footer.jsp" />
+	<%-- <jsp:include page="./Footer.jsp" /> --%>
 	
 	<script src="${pageContext.request.contextPath}/js/Index.js"></script>
-	<script type="text/javascript">
-		function sliding() {
-			move(-1);
-		    if (currentIdx === sliderCloneLis.length -1)
-		        setTimeout(() => {
-		          slider.style.transition = 'none';
-		          currentIdx = 1;
-		          translate = -liWidth;
-		          slider.style.transform = `translateX(${translate}px)`;
-		        }, speedTime);
-		}
-	
-		function showSliding() {
-		    setInterval(sliding, 1500);
-		}
-	
-		showSliding();
-	</script>
 </body>
 </html>

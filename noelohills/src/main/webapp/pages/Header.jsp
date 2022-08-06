@@ -63,9 +63,6 @@
 							<li><a href="">ORDERLIST</a></li>
 						</ul>
 					</li>
-					<li>
-						<a href="">CS CENTER</a>
-					</li>
 				</ul>
 			</nav>
 			

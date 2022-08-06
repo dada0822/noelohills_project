@@ -15,7 +15,7 @@
 		<div class="order_d">
 			${orderDetail.get(0).o_code}
 			${orderDetail.get(0).o_day}
-			
+				
 			<c:forEach items="${orderDetail}" var="total" varStatus="loop">
 				<img src="../image/product/${total.o_name}_1.jpg" alt="${total.o_name} 이미지">
 				${total.o_count}
