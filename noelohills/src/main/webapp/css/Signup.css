@@ -1,12 +1,108 @@
 @charset "UTF-8";
 
-.test{
-	
+.signupWrap{
     min-height: 100%;
     position: relative;
 }
 
-.test1{
-	margin-top: 100px;
+.signup_{
+	margin-top: 190px;
     padding-bottom: 195px; /* footer의 높이 */
+}
+
+.signupForm{
+	width: 900px;
+	height: 800px;
+    margin: 0 auto;
+    color: #959ea6;
+}
+
+.signupForm h2{
+	font-size: 30px;
+	text-align: center;
+	color: #767676;
+	width: 121px;
+	margin : 0 auto;
+	margin-bottom: 30px;
+	border-bottom: 5px solid #ffcc00;
+}
+
+.signupForm table{
+	width: 600px;
+	margin: 0 auto;	
+	border-collapse: separate;
+	border-spacing: 10px 0;
+}
+
+.signupForm table tr{
+	width: 580px;
+	margin: 0 auto;
+	height: 80px;
+}
+
+.signupForm table tr:last-child{
+	text-align: center;
+}
+
+.signupForm table tr td:first-child{
+	width: 120px;
+	font-weight: 550;
+	color: #676E73; /* 왼쪽 글씨 색상 */
+	padding-left: 6px;
+}
+
+.signupForm table tr td:nth-child(2){
+	width: 430px;
+}
+
+.signupForm table tr td span{
+	font-size: 12px;
+	font-weight: 500;
+	color: #676E73;
+}
+
+.signupForm table tr td{
+	padding-left: 6px;
+}
+
+.signupForm input{
+	width: 430px;
+	padding: 10px;
+	border-style: none;
+	border-bottom: 1px solid lightgray;
+	outline-style: none;
+	font-size: 17px;
+	color: #959ea6;
+	font-weight: 500;
+}
+
+.signupForm input::-ms-input-placeholder{
+	color: #c1c1c1;
+	font-weight: 600;
+}
+
+.signupForm input::-webkit-input-placeholder{
+	color: #c1c1c1;
+	font-weight: 600;	
+}
+
+.signupForm input::-moz-placeholder {
+	color: #c1c1c1;
+	font-weight: 600;
+}
+
+.signupForm button{
+	width: 200px;
+	font-weight: 600;
+	padding: 10px 0;
+	border-style: none;
+	background-color: #e7e7e7;
+	color: #777777;
+	font-size: 17px;
+	cursor: pointer;
+}
+
+.signupForm button:first-child {
+	background-color: #ffcc00;
+	color: #fff;
 }

@@ -5,7 +5,66 @@
     position: relative;
 }
 
-.loginForm{
-	margin-top: 100px;
+.login_{
+	height: 700px;
+	margin-top: 190px;
     padding-bottom: 195px; /* footer의 높이 */
+}
+
+.loginForm{
+	width: 900px;
+    margin: 0 auto;
+}
+
+.loginForm h2{
+	width: 90px;
+	margin : 0 auto;
+	margin-bottom: 30px;
+	border-bottom: 5px solid #ffcc00;
+	font-size: 30px;
+	text-align: center;
+	color: #767676;
+}
+
+.login_input{
+	width: 400px;
+	margin: 0 auto;
+}
+
+.login_input input{
+	width: 400px;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-style: none;
+	outline-style: none;
+	font-size: 17px;
+	font-weight: 500;
+	color: #959ea6;
+}
+
+.id_pw::-ms-input-placeholder {
+	color: #c1c1c1;
+	font-weight: 600;
+}
+
+.id_pw::-webkit-input-placeholder {
+	color: #c1c1c1;
+	font-weight: 600;
+}
+
+.id_pw::-moz-placeholder {
+	color: #c1c1c1;
+	font-weight: 600;
+}
+
+.login_input .id_pw{
+	border-bottom: 1px solid lightgray;
+	color: #959ea6;
+}
+
+.login_input input:last-child{
+	background-color: #ffcc00;
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
 }

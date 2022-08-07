@@ -1,16 +1,162 @@
 @charset "UTF-8";
 
-.basketpage{
+.basketWrap{
 	min-height: 100%;
     position: relative;
 }
 
-.basketFrm{
-	margin-top: 100px;
+.basket_{
+	margin-top: 190px;
     padding-bottom: 195px; /* footer의 높이 */
+    color: #767676;
 }
 
-.basketFrm img{
+.basketForm input{
 	width: 100px;
+	padding: 10px;
+	border-style: none;
+	outline-style: none;
+	font-size: 17px;
+	font-weight: 600;
+	color: #757575;
+	cursor: pointer;
+	background-color: #ffcc00;
+}
+
+.basketForm .separator{
+	display: inline-block;
+    width: 100%;
+    height: 1px;
+    background-color: gray;
+}
+
+/* .basketForm .separator:last-child{
+	margin-bottom: 12px;
+}
+ */
+/* 상품 하단과 상품 사이 구분자 색깔 다르게! */
+
+.basketForm h2{
+	width: 120px;
+	margin : 0 auto;
+	margin-bottom: 30px;
+	border-bottom: 5px solid #ffcc00;
+	font-size: 30px;
+	text-align: center;
+}
+
+.basket_page_none, .basket_page{
+	width: 900px;
+	margin: 0 auto;
+	font-weight: 500;
+}
+
+/* 장바구니 비어있을 때 */
+.basket_page_none{
+	text-align: center;
+	margin-top: 50px;
+}
+
+.basket_page_none p{
+	height: 250px;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.basket_page_none input{
+	width: 300px;
+	margin-bottom: 70px;	
+}
+
+/* 장바구니에 제품이 있을 때 */
+.basket_page ul{
+	display: flex;
+	justify-content: space-between;
+}
+
+.basket_page ul li{
+	height: 120px;
+	line-height: 120px;
+}
+
+.basket_page ul li:nth-child(1)>a{
+	display: inline-block;
+	height: 120px;
+}
+
+.basket_page ul li:nth-child(2){
+	width: 250px;
+	display: flex;
+	flex-direction: column;
+}
+
+.basket_page ul li:nth-child(2) span{
+	height: 20px;
+}
+
+.basket_page ul li:nth-child(2) span:nth-child(2){
+	font-size: 14px;
+}
+
+.basket_page ul li:nth-child(3){
+	max-width: 120px;
+}
+
+.basket_page img{
+	width: 120px;
 	height: auto;
+}
+
+.basket_page a{
+	color: #767676;
+	font-weight: 600;
+}
+
+.basket_page #basket_del_btn{
+	width: 76px;
+	padding: 3px;
+	font-size: 15px;
+	background-color: #fff;
+	color: #777777;
+	border: 1px solid #c3cfd9;
+}
+
+.basket_bottom{
+	width: 900px;
+	margin: 0 auto;
+	margin-bottom: 60px;
+}
+
+.basket_bottom>div{
+	text-align: center;
+}
+
+.basket_bottom>div input:last-child{
+	background-color: #e7e7e7;
+    color: #777777;
+}
+
+.basket_bottom input{
+	width: 150px;
+}
+
+.basket_bottom>input{
+	background-color: #fff;
+	color: #777777;
+	border: 1px solid #c3cfd9;
+	width: 120px;
+	padding: 5px;
+	float: right;
+	font-size: 14px;
+}
+
+.basket_bottom span{
+	font-weight: 600;
+	display: inline-block;
+	margin-bottom: 15px;
+}
+
+.basket_bottom span #point{
+	color: #ffcc00;
+	font-size: 18px;
 }

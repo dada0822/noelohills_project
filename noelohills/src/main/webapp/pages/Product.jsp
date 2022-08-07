@@ -17,18 +17,19 @@
 	<div class="test1">
 	
 		<div class="tab_menu">
-  <ul class="list">
-    <li class="selected">
-      <a href="#tab1" class="btn">Tab Button1</a>
-    </li>
-    <li>
-      <a href="#tab2" class="btn">Tab Button2</a>
-    </li>
-    <li>
-      <a href="#tab3" class="btn">Tab Button3</a>
-    </li>
-  </ul>
-</div>
+		  <ul class="list">
+		    <li class="selected">
+		      <a href="#tab1" class="btn">Tab Button1</a>
+		    </li>
+		    <li>
+		      <a href="#tab2" class="btn">Tab Button2</a>
+		    </li>
+		    <li>
+		      <a href="#tab3" class="btn">Tab Button3</a>
+		    </li>
+		  </ul>
+		</div>
+		
 		<div class="tab_menu">
 			<h2>SHOP</h2>
 			<ul class="list">

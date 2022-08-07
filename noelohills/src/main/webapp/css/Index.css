@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.index{
+.indexWrap{
 	min-height: 100%;
     position: relative;
 }
@@ -8,33 +8,33 @@
 .index_{
 	/* margin-top: 100px; */
     padding-bottom: 195px; /* footer의 높이 */
+    
+    
+    
+    height: 1200px;
 }
+
+
 
 /* Slideshow container */
 .slideshow-container {
-  /* max-width: 1200px; */
   /* max-height: 750px; */
   position: relative;
   margin: auto;
   
-  
-  height: 910px;
+  height: 600px;
 }
 .slideshow-container .mySlides img {
   /* height: 750px; */
   
-  
-  width: 100%;
-  height: 910px;
+  height: 600px;
 }
 
 /* Hide the images by default */
 .mySlides {
   display: none;
   
-  width: 100%;
-  height: 910px;
-  
+  height: 600px;
 }
 
 /* Next & previous buttons */
@@ -46,9 +46,9 @@
   margin-top: -22px;
   padding: 16px;
   /* color: white; */
-  color:black;
+  color: #ffcf42;
+  font-size: 22px;
   font-weight: bold;
-  font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
@@ -62,10 +62,21 @@
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  /* background-color: rgba(0,0,0,0.8); */
+  /* background-color: rgba(0,0,0,0.1); */
+  
+  /* hover 시 color 변경하는 걸로 */
 }
 
 /* The dots/bullets/indicators */
+
+.dots{
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+	margin-left: -67.5px;
+	height: 15px
+}
+
 .dot {
   cursor: pointer;
   height: 15px;
@@ -78,7 +89,7 @@
 }
 
 .active, .dot:hover {
-  background-color: #ffcf42;
+  background-color: #ffcc00;
 }
 
 /* Fading animation */
@@ -97,4 +108,14 @@
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+.section{
+	width: 900px;
+	margin: 0 auto;
+}
+
+.section img{
+	width: 350px;
+	height: auto;
 }
