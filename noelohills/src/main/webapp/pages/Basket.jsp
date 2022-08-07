@@ -54,8 +54,8 @@
 									<input id="basket_del_btn" type="button" onclick="location.href='./basketDelete.do?p_code=${total.p_code}'" value="삭제하기">
 								</li>
 							</ul>
-						</div>	
-						<span class="separator"></span> <!-- 상품마다 보더 -->
+						</div>
+						<span id="sepa" class="separator"></span> <!-- 상품마다 보더 -->
 						
 					</c:forEach>
 					
