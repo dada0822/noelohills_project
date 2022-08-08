@@ -6,21 +6,55 @@
 }
 
 .product_{
-	margin-top: 100px;
+	margin-top: 180px;
     padding-bottom: 195px; /* footer의 높이 */
+	color: #767676;
 }
 
-.test .subimg{
+/* 상품 페이지 */
+.product_page_top, .product_page_under{
+	width: 900px;
+	margin: 0 auto;
+}
+
+.prod a{
+	color : #777777;
+}
+
+.product_page_top h2{
+	width: 90.3px;
+	margin : 0 auto;
+	margin-bottom: 30px;
+	border-bottom: 5px solid #ffcc00;
+	font-size: 30px;
+	text-align: center;
+	color: #777777;
+}
+
+.product_page_top>div ul{
+	display: flex;
+	justify-content: center;
+	margin-right:14px;
+	margin-bottom: 20px;
+}
+
+.product_page_top>div ul li{
+	margin: 0 10px;
+}
+
+.product_page_top>div ul li a{
+	color : #777777;
+}
+
+/* 슬라이드 이미지 */
+.prod>img{
 	width: 100%;
+	height: 350px;
+	object-fit: cover;
+	margin-bottom: 15px;	
 }
 
-.test1 a img{
-	width: 300px;
+.product_page_under img{
+	width: 250px;
 	height: auto;
 }
-
-.tab_menu{position:relative;}
-.tab_menu .list{overflow:hidden;}
-.tab_menu .list li{float:left; margin-right:14px;}
-.tab_menu .list .btn{font-size:13px;}
-.tab_menu .list li.is_on .btn{font-weight:bold; color:green;}

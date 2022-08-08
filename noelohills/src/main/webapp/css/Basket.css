@@ -3,12 +3,6 @@
 .basketWrap{
 	min-height: 100%;
     position: relative;
-    
-    /* 드래그 방지 */
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
 }
 
 .basket_{
@@ -48,7 +42,7 @@
 .basketForm h2{
 	width: 120px;
 	margin : 0 auto;
-	margin-bottom: 30px;
+	margin-bottom: 36px;
 	border-bottom: 5px solid #ffcc00;
 	font-size: 30px;
 	text-align: center;

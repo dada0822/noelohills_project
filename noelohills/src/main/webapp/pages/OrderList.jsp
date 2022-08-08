@@ -23,7 +23,7 @@
 				</c:when>
 				<c:otherwise>
 					<span class="separator"></span>
-					<div class="olist_nav">
+					<div class="olist_title">
 						<ul>
 							<li>주문일자</li>
 							<li>이미지</li>
@@ -57,7 +57,6 @@
 									${total.o_price}원
 								</li>
 							</ul>
-							<%-- <input type="button" onclick="location.href='./orderdetail.do?o_code=${total.o_code}'" value="주문 상세보기"> --%>
 						</div>
 						<span class="separator"></span>
 					</c:forEach>
