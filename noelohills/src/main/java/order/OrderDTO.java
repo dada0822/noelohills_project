@@ -11,6 +11,7 @@ public class OrderDTO {
 	private String o_count;
 	private String o_name;
 	private String o_price;
+	
 	public String getO_code() {
 		return o_code;
 	}

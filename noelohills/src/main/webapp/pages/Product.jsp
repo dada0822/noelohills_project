@@ -11,10 +11,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600&display=swap" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/css/Product.css" rel="stylesheet">
 </head>
-<body class="test">
+<body class="productWrap">
 	<jsp:include page="./Header.jsp" />
 	
-	<div class="test1">
+	<div class="product_">
 	
 		<div class="tab_menu">
 		  <ul class="list">

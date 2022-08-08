@@ -1,12 +1,11 @@
 @charset "UTF-8";
 
-.test{
-	
+.productWrap{
     min-height: 100%;
     position: relative;
 }
 
-.test1{
+.product_{
 	margin-top: 100px;
     padding-bottom: 195px; /* footer의 높이 */
 }

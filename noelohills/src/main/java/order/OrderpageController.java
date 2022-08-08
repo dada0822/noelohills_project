@@ -31,7 +31,6 @@ public class OrderpageController extends HttpServlet {
 		BasketDTO b_dto = b_dao.memberInfo(m_id);
 		String m_code = b_dto.getM_code();
 		
-		OrderDTO dto = new OrderDTO();
 		OrderDAO dao = new OrderDAO();
 		
 		List<OrderDTO> orderList = dao.orderList(m_code);
@@ -49,9 +48,8 @@ public class OrderpageController extends HttpServlet {
 		String[] o_count = req.getParameterValues("p_count"); // 선택한 개수
 		String[] o_price = req.getParameterValues("p_totalprice"); // 개수에 따른 금액
 		//String totalprice = req.getParameter("totalprice"); // 장바구니 합산금액
+		String[] p_code = req.getParameterValues("p_code"); // 제품 코드
 		
-		
-
 		OrderDTO dto = new OrderDTO();
 		OrderDAO dao = new OrderDAO();
 		
@@ -74,7 +72,7 @@ public class OrderpageController extends HttpServlet {
 			map.put("o_name" + i, o_name[i]);
 			map.put("o_count" + i, o_count[i]);
 			map.put("o_price" + i, o_price[i].replace(",", ""));
-		
+			map.put("p_code" + i, p_code[i]);
 			list.add(map);
 		}
 		

@@ -52,6 +52,7 @@
 				</div>
 				<div class="footer_right">
 					<ul>
+						<li>CS Center</li>
 						<li>Privacy Policy</li>
 						<li>Terms &amp; Condition</li>
 					</ul>

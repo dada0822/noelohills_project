@@ -18,6 +18,8 @@ public class BasketDeleteController extends HttpServlet {
 		
 		HttpSession session = req.getSession();
 		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
 		String p_code = req.getParameter("p_code");
 		System.out.println("어떻게 나올지 " + p_code);
 		String m_id = (String) session.getAttribute("m_id");
@@ -36,11 +38,16 @@ public class BasketDeleteController extends HttpServlet {
 			dao.deleteSelectedProduct(m_code, p_code); // 선택 제품 삭제
 			
 			basketList2 = dao.basketList(m_code); // 장바구니 목록 조회
+			
+			String totalprice = dao.totalPrice(m_code);
+			
+			map.put("totalprice", totalprice);
 		}
 		
 		dao.close();
 		
 		req.setAttribute("basketList2", basketList2);
+		req.setAttribute("map", map);
 		
 		req.getRequestDispatcher("/pages/Basket.jsp").forward(req, resp);
 	}

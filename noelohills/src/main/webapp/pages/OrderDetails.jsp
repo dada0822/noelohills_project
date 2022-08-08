@@ -17,7 +17,9 @@
 			${orderDetail.get(0).o_day}
 				
 			<c:forEach items="${orderDetail}" var="total" varStatus="loop">
-				<img src="../image/product/${total.o_name}_1.jpg" alt="${total.o_name} 이미지">
+				<a href="./productDetail.do?p_code=${total.p_code}">
+					<img src="../image/product/${total.o_name}_1.jpg" alt="${total.o_name} 이미지">
+				</a>
 				${total.o_count}
 				${total.o_name}
 				${total.o_price}

@@ -29,7 +29,8 @@
 						<input type="hidden" name="p_name" value="${total.p_name}"><!-- 각각의 제품명 -->
 						<input type="hidden" name="p_totalprice" value="${total.b_price}"><!-- 각각의 금액 -->
 						<input type="hidden" name="totalprice" value="${map.totalprice}"> <!-- 총금액 -->
-						<input type="hidden" name="p_count" value="${total.b_count}"><!-- 각각의 개수 -->	
+						<input type="hidden" name="p_count" value="${total.b_count}"><!-- 각각의 개수 -->
+						<input type="hidden" name="p_code" value="${total.p_code}"><!-- 제품코드 추가! -->
 						<div class="basket_page">
 							<ul>
 								<li>
@@ -51,12 +52,11 @@
 									${total.b_price}원
 								</li>
 								<li>
-									<input id="basket_del_btn" type="button" onclick="location.href='./basketDelete.do?p_code=${total.p_code}'" value="삭제하기">
+									<input type="button" onclick="location.href='./basketDelete.do?p_code=${total.p_code}'" value="삭제하기">
 								</li>
 							</ul>
 						</div>
-						<span id="sepa" class="separator"></span> <!-- 상품마다 보더 -->
-						
+						<span class="separator"></span>
 					</c:forEach>
 					
 				<div class="basket_bottom">
@@ -66,7 +66,6 @@
 						<input type="submit" value="구매하기">
 						<input type="button" onclick="location.href='./product.do'" value="쇼핑 계속하기">
 					</div>
-					<br>
 					<input type="button" onclick="location.href='./basketDelete.do'" onclick="return confirm('장바구니를 비우시겠습니까?');" value="장바구니 비우기">
 				</div>
 				</c:otherwise>
