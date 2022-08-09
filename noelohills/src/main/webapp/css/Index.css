@@ -8,10 +8,7 @@
 .index_{
 	/* margin-top: 100px; */
     padding-bottom: 195px; /* footer의 높이 */
-    
-    
-    
-    height: 1200px;
+
 }
 
 
@@ -21,20 +18,20 @@
   /* max-height: 750px; */
   position: relative;
   margin: auto;
-  
-  height: 600px;
+  margin-bottom: 40px;
+  height: 650px;
 }
 .slideshow-container .mySlides img {
   /* height: 750px; */
   
-  height: 600px;
+  height: 650px;
 }
 
 /* Hide the images by default */
 .mySlides {
   display: none;
   
-  height: 600px;
+  height: 650px;
 }
 
 /* Next & previous buttons */
@@ -110,12 +107,74 @@
   to {opacity: 1}
 }
 
+/* section */
 .section{
-	width: 900px;
+	width: 1000px;
 	margin: 0 auto;
+	color: #777777;
+}
+
+.section h1{
+	margin-bottom: 30px;
+}
+
+.section ul{
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.section li{
+	width: 500px;
+	margin: 0 auto;
+	display: flex;/* 
+    align-items: flex-end; */
+    margin-bottom: 30px;
 }
 
 .section img{
-	width: 350px;
-	height: auto;
+	width: 230px;
+	height: 300px;
+	object-fit: cover;
+	margin-right: 20px;
 }
+
+.section p{
+	width: 240px;
+}
+
+.section p span:first-child{
+	font-size: 18px;
+	font-weight: 500;
+	display: inline-block;
+	margin-bottom: 40px;
+}
+
+.section li p span:first-child:after{
+	display:block;
+	content: '';
+	border-bottom: solid 3px #ffcc00;  
+	transform: scaleX(0);  
+	transition: transform 250ms ease-in-out;
+}
+
+.section li span:first-child:hover:after{
+	transform: scaleX(1);
+}
+
+.section li p span:first-child:after{
+	transform-origin: 0% 50%;
+}
+
+.section p span:last-child{
+	display: inline-block;
+	width: 240px;
+	font-size: 14px;
+}
+
+
+
+
+
+

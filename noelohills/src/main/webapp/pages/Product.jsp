@@ -6,9 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600&display=swap" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/css/Product.css" rel="stylesheet">
 </head>
 <body class="productWrap">
@@ -21,8 +18,8 @@
 					<div class="product_page_top">
 						<h2>SHOP</h2>
 						<div>
-							<ul class="p_nav">
-								<li><a class="btn" href="./product.do">ALL PRODUCTS</a></li>
+							<ul>
+								<li><a href="./product.do">ALL PRODUCTS</a></li>
 								<li><a href="./product.do?p_categorycode=${p_catecode.get(0).p_categorycode}">BABY</a></li>
 								<li><a href="./product.do?p_categorycode=${p_catecode.get(1).p_categorycode}">FAMILY</a></li>
 								<li><a href="./product.do?p_categorycode=${p_catecode.get(2).p_categorycode}">BATH GOODS</a></li>
@@ -34,12 +31,15 @@
 					<div class="product_page_under">
 						<c:forEach items="${productList}" var="total" varStatus="loop">
 							<%-- <input type="hidden" name="p_categorycode" value="${total.p_categorycode}"> --%>
-							<a href="../pages/productDetail.do?p_code=${total.p_code}">
-								<img src="${pageContext.request.contextPath}/image/product/${total.p_name}_1.jpg" alt="">
-								<br>
-								<span>${total.p_name}</span>
-							</a>
-							<p>${total.p_price}원</p>
+								<div>
+									<a href="../pages/productDetail.do?p_code=${total.p_code}">
+										<img src="${pageContext.request.contextPath}/image/product/${total.p_name}_1.jpg" alt="">
+									</a>	
+									<a href="../pages/productDetail.do?p_code=${total.p_code}">	
+										<span>${total.p_name}</span>
+									</a>
+									<p>${total.p_price}원</p>
+								</div>
 						</c:forEach>
 						<table width="100%">
 							<tr align="center">
@@ -55,24 +55,27 @@
 						<h2>SHOP</h2>
 						<div>
 							<ul>
-								<li><a class="btn" href="./product.do">ALL PRODUCTS</a></li>
-								<li><a class="btn" href="./product.do?p_categorycode=${p_catecode.get(0).p_categorycode}">BABY</a></li>
-								<li><a class="btn" href="./product.do?p_categorycode=${p_catecode.get(1).p_categorycode}">FAMILY</a></li>
-								<li><a class="btn" href="./product.do?p_categorycode=${p_catecode.get(2).p_categorycode}">BATH GOODS</a></li>
-								<li><a class="btn" href="./product.do?p_categorycode=${p_catecode.get(3).p_categorycode}">PRESENTS</a></li>
+								<li><a href="./product.do">ALL PRODUCTS</a></li>
+								<li><a href="./product.do?p_categorycode=${p_catecode.get(0).p_categorycode}">BABY</a></li>
+								<li><a href="./product.do?p_categorycode=${p_catecode.get(1).p_categorycode}">FAMILY</a></li>
+								<li><a href="./product.do?p_categorycode=${p_catecode.get(2).p_categorycode}">BATH GOODS</a></li>
+								<li><a href="./product.do?p_categorycode=${p_catecode.get(3).p_categorycode}">PRESENTS</a></li>
 							</ul>
 						</div>
 					</div>
 					<img src="../image/product/subimg/${cate_product.get(0).p_categorycode}_subslide.png" alt="${cate_product.get(0).p_categorycode} slide image">
-					<div class="product_page_under">
+					<div id="cate_page" class="product_page_under">
 						<c:forEach items="${cate_product}" var="total" varStatus="loop">
 							<input type="hidden" name="p_categorycode" value="${total.p_categorycode}">
-							<a href="../pages/productDetail.do?p_code=${total.p_code}">
-								<img src="${pageContext.request.contextPath}/image/product/${total.p_name}_1.jpg" alt="">
-								<br>
-								<span>${total.p_name}</span>
-							</a>
-							<p>${total.p_price}원</p>
+							<div>
+								<a href="../pages/productDetail.do?p_code=${total.p_code}">
+									<img src="${pageContext.request.contextPath}/image/product/${total.p_name}_1.jpg" alt="">
+								</a>	
+								<a href="../pages/productDetail.do?p_code=${total.p_code}">	
+									<span>${total.p_name}</span>
+								</a>
+								<p>${total.p_price}원</p>
+							</div>
 						</c:forEach>
 					</div>
 				</c:otherwise>

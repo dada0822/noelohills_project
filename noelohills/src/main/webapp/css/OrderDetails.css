@@ -1,16 +1,16 @@
-@charset "EUC-KR";
+@charset "UTF-8";
 
-.orderDetail{
+.orderDetailsWrap{
 	min-height: 100%;
     position: relative;
 }
 
-.order_d{
+.orderDetails_{
 	margin-top: 100px;
-    padding-bottom: 195px; /* footerÀÇ ³ôÀÌ */
+    padding-bottom: 195px; /* footerì˜ ë†’ì´ */
 }
 
-.order_d img{
+.orderDetails_page img{
 	width: 100px;
 	height: auto;
 }

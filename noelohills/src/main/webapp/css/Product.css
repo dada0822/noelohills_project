@@ -6,7 +6,7 @@
 }
 
 .product_{
-	margin-top: 180px;
+	margin-top: 150px;
     padding-bottom: 195px; /* footer의 높이 */
 	color: #767676;
 }
@@ -14,7 +14,13 @@
 /* 상품 페이지 */
 .product_page_top, .product_page_under{
 	width: 900px;
+	height: auto;
 	margin: 0 auto;
+}
+
+#cate_page{
+	overflow: auto;
+	padding-bottom: 20px;
 }
 
 .prod a{
@@ -31,6 +37,7 @@
 	color: #777777;
 }
 
+/* 메뉴바 */
 .product_page_top>div ul{
 	display: flex;
 	justify-content: center;
@@ -44,6 +51,19 @@
 
 .product_page_top>div ul li a{
 	color : #777777;
+	text-transform:uppercase;
+}
+
+.product_page_top>div ul li a:after{
+	display:block;
+	content: '';
+	border-bottom: solid 3px #ffcc00;  
+	transform: scaleX(0);  
+	transition: transform 250ms ease-in-out;
+}
+
+.product_page_top>div ul li a:hover:after{
+	transform: scaleX(1);
 }
 
 /* 슬라이드 이미지 */
@@ -51,10 +71,41 @@
 	width: 100%;
 	height: 350px;
 	object-fit: cover;
-	margin-bottom: 15px;	
+	margin-bottom: 40px;	
+}
+
+/* 상품 목록 */
+.product_page_under div{
+	width: 250px;
+	float: left;
+	margin-left: 37px;
+	margin-bottom: 20px;
+	text-align: center;
 }
 
 .product_page_under img{
 	width: 250px;
-	height: auto;
+	height: 250px;
+}
+
+.product_page_under div>a:first-child{
+	display: inline-block;
+	height: 250px;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+.product_page_under div>a:hover img{
+	transform: scale(1.1);
+	transition: 0.8s;
+}
+
+.product_page_under a span, p{
+	font-weight: 600;
+}
+
+.product_page_under table{
+	font-weight: 600;
+	padding-top: 100px;
+	margin-bottom: 40px;
 }

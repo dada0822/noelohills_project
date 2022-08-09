@@ -1,21 +1,162 @@
 @charset "UTF-8";
 
-.wrap{
+.productDetailWrap{
     min-height: 100%;
     position: relative;
 }
 
-.wrap_1{
+.productDetail_{
 	margin-top: 100px;
     padding-bottom: 195px; /* footer의 높이 */
+	color: #777777;
 }
 
-.wrap_1 #main_img{
-	width: 300px;
-	height: auto;
+.pDetail{
+	width: 900px;
+	margin: 0 auto;
+	margin-bottom: 30px;
+	display: flex;
+	justify-content: space-between;
 }
 
-.wrap_1 #small_img{
-	width: 150px;
+/* 왼쪽 부분 */
+/* 큰 이미지 */
+.pDetail>div>img{
+	width: 465px;
 	height: auto;
+	margin-bottom: 10px;
+}
+
+/* 작은 이미지 */
+.pDetail>div ul{
+	display: flex;
+	justify-content:center;
+	width: 465px;
+}
+
+.pDetail>div li{
+	margin: 0 2px 0;
+}
+
+.pDetail>div ul img{
+	width: 85px;
+	height: auto;
+	border: 1px solid #c1c1c1;
+}
+
+/* 오른쪽 부분 */
+.pDetail div:last-child{
+	width: 380px;
+}
+
+/* 상품 정보 */
+.pDetail div:last-child ul{
+	width: 380px;
+	padding-top: 50px;
+	margin-bottom: 14px;
+	display: flex;
+	flex-direction: column;
+}
+
+.pDetail div:last-child ul li{
+	width: 380px;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
+.pDetail div:last-child li:first-child{
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.pDetail div:last-child li:nth-child(3){
+	font-weight: 600;
+	font-size: 19px;
+}
+
+/* 상품 개수와 금액 부분 */
+.pDetail div:last-child .pd_count_price{
+	margin-bottom: 20px;
+	padding-top: 15px;
+	border-top: 1px dotted #d2d2d2;
+}
+
+.pDetail div:last-child>div>div{
+	margin-bottom: 10px;
+}
+
+/* 수량과 총 상품금액 */
+.pDetail div:last-child span:nth-child(-n+2){
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.pDetail div:last-child span:first-child{
+	margin-left: 23px;
+}
+
+.pDetail .pd_count_price .pd_buts{
+	cursor: pointer;
+	border: none;
+	margin: 0 5px 0;
+	padding: 2px 8px;
+	text-align: center;
+	font-size: 15px;
+	font-weight: 600;
+	color: #777777;
+	display: inline-block;	
+	border-radius: 50%;
+	background-color: #fff5d6;
+}
+
+.pDetail .pd_count_price #pd_buts{
+	margin-left: 35px;
+}
+
+.pDetail .pd_count_price #p_count, #p_totalprice{
+	border: none;
+	outline: none;
+	cursor: default;
+	font-size: 17px;
+	font-weight: 600;
+	color: #777777;
+}
+
+.pDetail div:last-child #p_count{
+	text-align: center;
+	width: 12px;
+}
+
+.pDetail div:last-child span:last-child{
+	font-size: 17px;
+	font-weight: 600;
+	color: #ffcc00;
+}
+
+.pDetail div:last-child #p_totalprice{
+	width: 75px;
+	text-align: right;
+	color: #ffcc00;
+}
+
+/* 구매하기, 장바구니 버튼 */
+.pDetail button{
+	width: 185px;
+	padding: 10px;
+	border-style: none;
+	outline-style: none;
+	font-size: 17px;
+	font-weight: 600;
+	color: #959ea6;
+	cursor: pointer;
+}
+
+.pDetail div:last-child div:last-child{
+	display: flex;
+	justify-content: space-between;
+}
+
+.pDetail button:first-child {
+	color: #fff;
+	background-color: #ffcc00;
 }

@@ -14,18 +14,24 @@ import javax.servlet.http.HttpSession;
 
 import basket.BasketDAO;
 import basket.BasketDTO;
+import common.JSFunction;
 
 
 public class OrderpageController extends HttpServlet {
 	
 	// 헤더에서 들어올 경우!!
+	
+	// 상품페이지와 상품
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		System.out.println("ㄱririridd");
 		
 		HttpSession session = req.getSession();
 	
 		String m_id = (String) session.getAttribute("m_id");
+		
+		if (!(session.getAttribute("m_id") == null)) {
 		BasketDAO b_dao = new BasketDAO();
 		
 		BasketDTO b_dto = b_dao.memberInfo(m_id);
@@ -33,14 +39,20 @@ public class OrderpageController extends HttpServlet {
 		
 		OrderDAO dao = new OrderDAO();
 		
-		List<OrderDTO> orderList = dao.orderList(m_code);
+		List<OrderDTO> orderList = dao.orderList(m_code); // 주문 내역 조회
 		
 		req.setAttribute("orderList", orderList);
 		req.getRequestDispatcher("/pages/OrderList.jsp").forward(req, resp);
+		} else {
+			JSFunction.alertLocation(resp, "로그인하셔야 구매할 수 있습니다.", "./login.do");
+		}
+		
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		System.out.println("ㄱririri");
 		
 		String m_code = req.getParameter("m_code"); // 상세페이지에서는 null, 회원코드 장바구니에서 구매하기를 누를 경우에만 값이 가져와짐
 		
