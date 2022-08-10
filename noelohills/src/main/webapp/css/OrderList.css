@@ -11,6 +11,16 @@
     color: #767676;
 }
 
+.oList h2{
+	width: 120px;
+	margin : 0 auto;
+	margin-bottom: 36px;
+	border-bottom: 5px solid #ffcc00;
+	font-size: 30px;
+	text-align: center;
+	color: #777777;
+}
+
 .oList input{
 	width: 300px;
 	padding: 10px;
@@ -23,22 +33,6 @@
 	color: #757575;
 	cursor: pointer;
 	background-color: #ffcc00;
-}
-
-.oList h2{
-	width: 120px;
-	margin : 0 auto;
-	margin-bottom: 36px;
-	border-bottom: 5px solid #ffcc00;
-	font-size: 30px;
-	text-align: center;
-	color: #777777;
-}
-
-.orderList_page_none, .orderList_page{
-	width: 900px;
-	margin: 0 auto;
-	font-weight: 500;
 }
 
 .oList .separator{
@@ -56,6 +50,12 @@
 
 .oList>span:last-of-type{
 	margin-bottom: 40px;
+}
+
+.orderList_page_none, .orderList_page{
+	width: 900px;
+	margin: 0 auto;
+	font-weight: 500;
 }
 
 /* 구매내역이 없을 때 */
@@ -87,9 +87,6 @@
 
 .olist_title li{
 	text-align: center;
-}
-
-.olist_title li{
 	width: 80px;
 }
 
@@ -97,9 +94,12 @@
 	width: 120px;
 }
 
-
 .olist_title li:nth-child(3){
 	width: 230px;
+}
+
+.olist_title li:nth-child(4){
+	margin-right: 4px;
 }
 
 .olist_title li:last-child{
@@ -107,7 +107,6 @@
 	padding-right: 10px;
 }
 
-/* 주문 상세보기 */
 .orderList_page>div{
 	width: 100%;
 	text-align: right;
@@ -121,10 +120,6 @@
 
 .orderList_page a:hover{
 	font-weight: 600;
-}
-
-.orderList_page ul{
-	align-content: center;
 }
 
 .orderList_page ul li{

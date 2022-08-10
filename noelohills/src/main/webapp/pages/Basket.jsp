@@ -61,7 +61,7 @@
 					
 				<div class="basket_bottom">
 					<div>
-						<span>총합 : <span style="" id="point">${map.totalprice}원</span></span>
+						<span>총합 : <span id="point">${map.totalprice}원</span></span>
 						<br>
 						<input type="submit" value="구매하기">
 						<input type="button" onclick="location.href='./product.do'" value="쇼핑 계속하기">

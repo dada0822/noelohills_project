@@ -100,6 +100,10 @@
 	transition: 0.8s;
 }
 
+.product_page_under div>a:not(:hover) img{
+	transition: 0.8s;
+}
+
 .product_page_under a span, p{
 	font-weight: 600;
 }

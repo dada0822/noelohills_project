@@ -11,30 +11,26 @@
 
 }
 
-
-
-/* Slideshow container */
+/* 메인 슬라이드 */
 .slideshow-container {
   /* max-height: 750px; */
   position: relative;
   margin: auto;
-  margin-bottom: 40px;
-  height: 650px;
+  margin-bottom: 60px;
+  height: 720px;
 }
 .slideshow-container .mySlides img {
   /* height: 750px; */
   
-  height: 650px;
+  height: 720px;
 }
 
-/* Hide the images by default */
 .mySlides {
   display: none;
   
-  height: 650px;
+  height: 720px;
 }
 
-/* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -44,40 +40,33 @@
   padding: 16px;
   /* color: white; */
   color: #ffcf42;
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 55px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  /* background-color: rgba(0,0,0,0.1); */
-  
-  /* hover 시 color 변경하는 걸로 */
+  color: #d6af3a;
 }
-
-/* The dots/bullets/indicators */
 
 .dots{
 	position: absolute;
-	bottom: 5px;
+	bottom: 6px;
 	left: 50%;
-	margin-left: -67.5px;
+	margin-left: -58.5px;
 	height: 15px
 }
 
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
+  height: 12px;
+  width: 12px;
   margin: 0 2px;
   background-color: #ffffff;
   border-radius: 50%;
@@ -89,7 +78,6 @@
   background-color: #ffcc00;
 }
 
-/* Fading animation */
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
@@ -107,15 +95,17 @@
   to {opacity: 1}
 }
 
-/* section */
-.section{
+/* section 부분 */
+.section, .section2, .section3{
 	width: 1000px;
 	margin: 0 auto;
 	color: #777777;
+	margin-bottom: 70px;
 }
 
-.section h1{
-	margin-bottom: 30px;
+.section h2{
+	font-size: 40px;
+	margin-bottom: 40px;
 }
 
 .section ul{
@@ -127,28 +117,56 @@
 
 .section li{
 	width: 500px;
+	height: 300px;
 	margin: 0 auto;
-	display: flex;/* 
-    align-items: flex-end; */
-    margin-bottom: 30px;
+	display: flex;
+    margin-bottom: 60px;
 }
 
+.section .img_trans{
+	width: 200px;
+	height: 300px;
+	overflow: hidden;
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+	margin-right: 20px;
+}
 .section img{
-	width: 230px;
+	width: 200px;
 	height: 300px;
 	object-fit: cover;
 	margin-right: 20px;
 }
 
+.section .img_trans img{
+	width: 320px;
+	height: 305px;
+	object-fit: cover;
+	transform: scale(1.1);
+	margin: 0 auto;
+}
+
+.section li:hover .img_trans img{
+	transform: scale(0.99);
+	transition: 0.8s;
+}
+
+.section li:not(:hover) .img_trans img{
+	transition: 0.8s;
+}
+
 .section p{
-	width: 240px;
+	width: 280px;
+	height: 300px;
 }
 
 .section p span:first-child{
-	font-size: 18px;
-	font-weight: 500;
+	height: 225px;
 	display: inline-block;
-	margin-bottom: 40px;
+	padding-top: 160px;
+	font-size: 20px;
+	font-weight: 600;
 }
 
 .section li p span:first-child:after{
@@ -169,12 +187,71 @@
 
 .section p span:last-child{
 	display: inline-block;
-	width: 240px;
+	width: 268px;
 	font-size: 14px;
 }
 
+.sa {
+  opacity: 0;
+  transition: all .7s ease;
+}
 
+/* 아래에서 위로 페이드 인 */
+.sa-up {
+  transform: translate(0, 20px);
+}
+.sa.show {
+  opacity: 1;
+  transform: none;
+}
 
+/* section2 */
+.section2{
+	margin-bottom: 200px;
+}
+.section2 div{
+	width: 550px;
+	height: 320px;
+	object-fit: cover;
+	overflow: hidden;
+	margin-bottom: 25px;
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+}
 
+.section2 img{
+	width: 658px;
+	height: 490px;
+	margin: 0 auto;
+	object-fit: cover;
+	transform: scale(1.01);
+}
 
+.section2 div img:hover{
+	transform: scale(0.9);
+	transition: 0.8s;
+}
 
+.section2 div img:not(:hover){
+	transition: 0.8s;
+}
+
+.section2 h2{
+	font-size: 35px;
+	margin-bottom: 10px;
+}
+
+.section2 p{
+	font-size: 13px;
+}
+
+/* section3 */
+.section3 h2{
+	font-size: 28px;
+	margin-bottom: 20px;
+}
+
+.section3 li{
+	font-size: 14px;
+}

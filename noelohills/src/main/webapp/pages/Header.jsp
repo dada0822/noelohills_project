@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="../css/Header.css?v=1" rel="stylesheet">
-	<div class="header">
+	<header>
 		<div class="header_in">
 			<div id="logo">
 				<a href="./Index.jsp"><img src="${pageContext.request.contextPath}/image/header/logo_new.png" alt="noelohills"></a>
@@ -84,4 +84,6 @@
             	</c:choose>
 			</div>
 		</div> <!-- .header_in -->
-	</div> <!-- .header -->
+	</header> <!-- .header -->
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script src="${pageContext.request.contextPath}/js/Header.js"></script>
