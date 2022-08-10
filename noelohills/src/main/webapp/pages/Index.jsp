@@ -102,14 +102,49 @@
 				<div class="section3">
 					<h2 class="sa sa-up">Certifications</h2>
 					<ul>
-						<li class="sa sa-up">내 아이가 직접 사용하는 제품,</li>
+						<li class="sa sa-up">내 아이가 직접 사용하는 제품</li>
 						<li class="sa sa-up">아무 것이나 사용할 수 없기에 유해 논란이 있는 성분은 배제하고 
 							<br>안심할 수 있는 성분으로 만들어 공신력 있는 기관의 실험을 통해 품질, 효과와 안전성을 관리하고 있습니다.</li>
 					</ul>
 					<ul>
-						<li></li>
+						<li>
+							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<span>독일 더마 테스트</span>
+						</li>
+						<li>
+							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<span>피부 저자극 테스트</span>
+						</li>
+						<li>
+							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<span>안자극 테스트</span>
+						</li>
+						<li>
+							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<span>임상실험</span>
+						</li>
+						<li>
+							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<span>향 알러젠 테스트</span>
+						</li>
+						<li>
+							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<span>Food Grade</span>
+						</li>
+						<li>
+							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<span>EWG 그린등급</span>
+						</li>
+						<li>
+							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<span>유해 성분 무첨가</span>
+						</li>
+						<li>
+							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<span>화해 설문</span>
+						</li>
 					</ul>
-				</div>
+				</div> <!-- section3 -->
 		    </div>
 		</div>
 	
