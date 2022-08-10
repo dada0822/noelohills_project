@@ -112,35 +112,35 @@
 							<span>독일 더마 테스트</span>
 						</li>
 						<li>
-							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<img src="../image/index/sub/sub3_img2.png" alt="">
 							<span>피부 저자극 테스트</span>
 						</li>
 						<li>
-							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<img src="../image/index/sub/sub3_img3.png" alt="">
 							<span>안자극 테스트</span>
 						</li>
 						<li>
-							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<img src="../image/index/sub/sub3_img4.png" alt="">
 							<span>임상실험</span>
 						</li>
 						<li>
-							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<img src="../image/index/sub/sub3_img5.png" alt="">
 							<span>향 알러젠 테스트</span>
 						</li>
 						<li>
-							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<img src="../image/index/sub/sub3_img6.png" alt="">
 							<span>Food Grade</span>
 						</li>
 						<li>
-							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<img src="../image/index/sub/sub3_img7.png" alt="">
 							<span>EWG 그린등급</span>
 						</li>
 						<li>
-							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<img src="../image/index/sub/sub3_img8.png" alt="">
 							<span>유해 성분 무첨가</span>
 						</li>
 						<li>
-							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<img src="../image/index/sub/sub3_img9.png" alt="">
 							<span>화해 설문</span>
 						</li>
 					</ul>
