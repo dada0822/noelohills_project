@@ -10,46 +10,6 @@ $(document).ready(function() {
 });
 
 
-
-/*var scroll = $(window).scrollTop();
-    if (scroll < 1) {
-		$('header').mouseenter(function() {
-			
-			$('header').css('background','rgba(255,255,255,0.95)');
-			$('header').css('border-bottom','1px solid #ddd');
-		});
-		
-		$('header').mouseleave(function() {
-			
-			$('header').css('background','rgba(255,255,255,0)');
-			$('header').css('border-bottom','none');
-		});
-}*/
-
-
-
-
-
-/*$(document).ready(function() {
-	$('header').mouseenter(function() {
-		
-		$('header').css('background','rgba(255,255,255,0.95)');
-		$('header').css('border-bottom','1px solid #ddd');
-	});
-		
-		
-	$(window).scroll(function() {
-	    var scroll = $(window).scrollTop();
-	    if (scroll <= 1) {
-			$('header').mouseleave(function() {
-			
-				$('header').css('background','rgba(255,255,255,0)');
-				$('header').css('border','none');
-			});
-	   }
-	})
-});*/
-
 /* 스크롤 시 header css 변경 */
 $(document).ready(function() {
   $(window).scroll(function() {

@@ -44,6 +44,10 @@
 	text-align: center;
 }
 
+.signupForm table tr td{
+	padding-left: 6px;
+}
+
 .signupForm table tr td:first-child{
 	width: 120px;
 	font-weight: 550;
@@ -59,10 +63,6 @@
 	font-size: 12px;
 	font-weight: 500;
 	color: #676E73;
-}
-
-.signupForm table tr td{
-	padding-left: 6px;
 }
 
 .signupForm input{

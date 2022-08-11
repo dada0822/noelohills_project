@@ -19,7 +19,7 @@
 		<div class="header_in">
 			<div id="logo">
 				<a href="./Index.jsp"><img src="${pageContext.request.contextPath}/image/header/logo_new.png" alt="noelohills"></a>
-			</div>
+			</div> <!-- logo -->
 		
 			<nav>
 				<ul>
@@ -64,7 +64,7 @@
 						</ul>
 					</li>
 				</ul>
-			</nav>
+			</nav> <!-- nav -->
 			
 			<div class="profile">
 				<c:choose>
@@ -82,7 +82,7 @@
 	            		</ul>
             		</c:otherwise>
             	</c:choose>
-			</div>
+			</div> <!-- profile -->
 		</div> <!-- .header_in -->
 	</header> <!-- .header -->
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>

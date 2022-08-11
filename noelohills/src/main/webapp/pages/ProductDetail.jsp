@@ -44,15 +44,15 @@
 					</div>
 					<span>총 상품금액</span>
 					<span><input type="text" name="p_totalprice" id="p_totalprice" value="${dto.p_totalprice}">원</span> <!-- 개수에 따른 금액 -->
-				</div>
+				</div> <!-- pd_count_price -->
 				
 				<div>
 					<button type="submit" onclick="form.action='./order.do'">구매하기</button>
 					<button type="submit">장바구니</button>
 				</div>	
 			</div>
-		</form>
-	</div>
+		</form> <!-- pDetail -->
+	</div> <!-- productDetail_ -->
 	
 	<jsp:include page="./Footer.jsp" />
 	<script src="${pageContext.request.contextPath}/js/ProductDetail.js"></script>

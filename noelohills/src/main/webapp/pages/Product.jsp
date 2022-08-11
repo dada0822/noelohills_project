@@ -26,14 +26,13 @@
 								<li><a href="./product.do?p_categorycode=${p_catecode.get(3).p_categorycode}">PRESENTS</a></li>
 							</ul>
 						</div>
-					</div>
+					</div> <!-- product_page_top -->
 					<img src="../image/product/subimg/allproducts_subslide.png" alt="slide image">
 					<div class="product_page_under">
 						<c:forEach items="${productList}" var="total" varStatus="loop">
-							<%-- <input type="hidden" name="p_categorycode" value="${total.p_categorycode}"> --%>
 								<div>
 									<a href="../pages/productDetail.do?p_code=${total.p_code}">
-										<img src="${pageContext.request.contextPath}/image/product/${total.p_name}_1.jpg" alt="">
+										<img src="${pageContext.request.contextPath}/image/product/${total.p_name}_1.jpg" alt="${total.p_name} 이미지">
 									</a>	
 									<a href="../pages/productDetail.do?p_code=${total.p_code}">	
 										<span>${total.p_name}</span>
@@ -48,7 +47,7 @@
 								</td>
 							</tr>
 						</table>
-					</div>
+					</div> <!-- product_page_under -->
 				</c:when>
 				<c:otherwise>
 					<div class="product_page_top">
@@ -62,14 +61,14 @@
 								<li><a href="./product.do?p_categorycode=${p_catecode.get(3).p_categorycode}">PRESENTS</a></li>
 							</ul>
 						</div>
-					</div>
+					</div> <!-- product_page_top -->
 					<img src="../image/product/subimg/${cate_product.get(0).p_categorycode}_subslide.png" alt="${cate_product.get(0).p_categorycode} slide image">
 					<div id="cate_page" class="product_page_under">
 						<c:forEach items="${cate_product}" var="total" varStatus="loop">
 							<input type="hidden" name="p_categorycode" value="${total.p_categorycode}">
 							<div>
 								<a href="../pages/productDetail.do?p_code=${total.p_code}">
-									<img src="${pageContext.request.contextPath}/image/product/${total.p_name}_1.jpg" alt="">
+									<img src="${pageContext.request.contextPath}/image/product/${total.p_name}_1.jpg" alt="${total.p_name} 이미지">
 								</a>	
 								<a href="../pages/productDetail.do?p_code=${total.p_code}">	
 									<span>${total.p_name}</span>
@@ -77,11 +76,11 @@
 								<p>${total.p_price}원</p>
 							</div>
 						</c:forEach>
-					</div>
+					</div> <!-- product_page_under / #cate_page -->
 				</c:otherwise>
 			</c:choose>
-		</div>
-	</div>
+		</div> <!-- prod -->
+	</div> <!-- product_ -->
 	
 	<jsp:include page="./Footer.jsp" />
 	<script src="${pageContext.request.contextPath}/js/Product.js"></script>

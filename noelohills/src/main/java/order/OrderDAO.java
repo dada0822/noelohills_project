@@ -13,28 +13,9 @@ public class OrderDAO extends DBConnPool {
 	}
 	
 	// 구매 테이블에 insert
-	// 구매내역 조회 select (회원 코드)
-	
+	// 구매내역 조회 select (회원 코드)	
 	// m_code 뽑아내기
-	public OrderDTO m_codeGet(OrderDTO dto) {
-		String query = "SELECT m.m_code "
-					+ " FROM member m, order_ o "
-					+ " WHERE m.m_code = o.m_code(+)";
-		try {
-			stmt = con.createStatement();
-			rs = stmt.executeQuery(query);
-			if(rs.next()) {
-				dto.setM_code(rs.getString(1));
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("회원 코드 조회 중 예외 발생");
-		}
-		return dto;
-	}
-	
-	// m_code 뽑아내기
-	public String m_codeGet1() {
+	public String m_codeGet() {
 		String m_code = "";
 		
 		String query = "SELECT m.m_code "
@@ -53,6 +34,7 @@ public class OrderDAO extends DBConnPool {
 		return m_code;
 	}
 	
+	// 구매한 상품 order_ table에 insert
 	public int orderInsert(List list, OrderDTO dto) {
 		int result = 0;
 		
@@ -81,7 +63,7 @@ public class OrderDAO extends DBConnPool {
 		return result;
 	}
 	
-	// order_ table에 insert 후 basket table에 있는 데이터 제거
+	// 구매 상품 order_ table에 insert 후 basket table에 있는 데이터 제거
 	public void deleteProduct(String m_code) {
 		int result = 0;
 		String query = "DELETE FROM basket WHERE m_code=?";
@@ -93,7 +75,7 @@ public class OrderDAO extends DBConnPool {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("basket table 데이터 delete 중 예외 발생");
+			System.out.println("basket table 데이터 삭제 중 예외 발생");
 		}
 	}
 	

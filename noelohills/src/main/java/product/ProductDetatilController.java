@@ -21,7 +21,7 @@ public class ProductDetatilController extends HttpServlet {
 
 		Product_imgDAO dao2 = new Product_imgDAO();
 		
-		List<Product_imgDTO> imgList = dao2.product_imgView(p_code); // 상품 코드와 맞는 이미지 불러오기  
+		List<Product_imgDTO> imgList = dao2.product_imgView(p_code); // 상품 코드와 맞는 이미지 불러오기
 		
 		dao1.close();
 		dao2.close();

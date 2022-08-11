@@ -27,7 +27,7 @@
 					<li>수량</li>
 					<li>합계</li>
 				</ul>
-			</div>
+			</div> <!-- oDetails_title -->
 			<span class="separator"></span>
 			<c:forEach items="${orderDetail}" var="total" varStatus="loop">
 				<div class="orderDetails_page">
@@ -41,7 +41,7 @@
 						<li>${total.o_count}</li>
 						<li>${total.o_price}원</li>
 					</ul>
-				</div>
+				</div> <!-- orderDetails_page -->
 				<span class="separator"></span>
 			</c:forEach>
 			<div>
@@ -49,8 +49,8 @@
 				<br>
 				<input type="button" onclick="location.href='./product.do'" value="쇼핑 계속하기">
 			</div>
-		</div>
-	</div>
+		</div> <!-- oDetails -->
+	</div> <!-- orderDetails_ -->
 		
 	<jsp:include page="./Footer.jsp" />
 </body>

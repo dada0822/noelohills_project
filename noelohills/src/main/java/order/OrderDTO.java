@@ -1,12 +1,9 @@
 package order;
 
-import java.sql.Date;
-
 public class OrderDTO {
 	private String o_code;
 	private String p_code;
 	private String m_code;
-	private String b_code;
 	private String o_day;
 	private String o_count;
 	private String o_name;
@@ -29,12 +26,6 @@ public class OrderDTO {
 	}
 	public void setM_code(String m_code) {
 		this.m_code = m_code;
-	}
-	public String getB_code() {
-		return b_code;
-	}
-	public void setB_code(String b_code) {
-		this.b_code = b_code;
 	}
 	public String getO_day() {
 		return o_day;

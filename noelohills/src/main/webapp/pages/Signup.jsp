@@ -32,6 +32,10 @@
 					<td><input type="password" placeholder="비밀번호를 다시 입력하세요."></td>
 				</tr>
 				<tr>
+					<td>이메일</td>
+					<td><input type="email" name="m_email" placeholder="이메일을 입력하세요."></td>
+				</tr>
+				<tr>
 					<td>이름</td>
 					<td><input type="text" name="m_name" placeholder="이름을 입력하세요."></td>
 				</tr>
@@ -44,18 +48,14 @@
 					<td><input type="text" name="m_tel" placeholder="010-1111-1111"></td>
 				</tr>
 				<tr>
-					<td>이메일</td>
-					<td><input type="email" name="m_email" placeholder="이메일을 입력하세요."></td>
-				</tr>
-				<tr>
 					<td colspan="2">
 						<button type="submit">회원가입</button>
 						<button type="reset">초기화</button>
 					</td>
 				</tr>
 			</table>
-		</form>
-	</div>
+		</form> <!-- signupForm -->
+	</div> <!-- signup_ -->
 	<jsp:include page="Footer.jsp" />
 </body>
 </html>

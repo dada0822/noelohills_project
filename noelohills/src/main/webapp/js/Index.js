@@ -1,10 +1,10 @@
-var slideIndex = 0; //slide index
+/* main slide */
+var slideIndex = 0;
 
-// HTML 로드가 끝난 후 동작
+
 window.onload=function(){
   showSlides(slideIndex);
 
-  // Auto Move Slide
   var sec = 3000;
   setInterval(function(){
     slideIndex++;
@@ -13,14 +13,11 @@ window.onload=function(){
   }, sec);
 }
 
-
-// Next/previous controls
 function moveSlides(n) {
   slideIndex = slideIndex + n
   showSlides(slideIndex);
 }
 
-// Thumbnail image controls
 function currentSlide(n) {
   slideIndex = n;
   showSlides(slideIndex);
@@ -34,7 +31,7 @@ function showSlides(n) {
 
   if ((n+1) > size) {
     slideIndex = 0; n = 0;
-  }else if (n < 0) {
+  } else if (n < 0) {
     slideIndex = (size-1);
     n = (size-1);
   }
@@ -51,7 +48,7 @@ function showSlides(n) {
 }
 
 
-
+/* fade in */
   const saTriggerMargin = 300;
   const saElementList = document.querySelectorAll('.sa');
 

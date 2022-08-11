@@ -40,7 +40,7 @@
 						<strong>제2021-서울용산-0634호</strong>
 					</li>
 				</ul>
-			</div>
+			</div> <!-- footer_content -->
 			<div class="footer_end">
 				<div class="footer_left">
 					<ul>
@@ -49,14 +49,14 @@
 							All rights reserved.
 						</li>
 					</ul>
-				</div>
+				</div> <!-- footer_left -->
 				<div class="footer_right">
 					<ul>
 						<li>CS Center</li>
 						<li>Privacy Policy</li>
 						<li>Terms &amp; Condition</li>
 					</ul>
-				</div>
-			</div>
+				</div> <!-- footer_right -->
+			</div> <!-- footer_end -->
 		</div>
-	</footer>
+	</footer> <!-- footer -->

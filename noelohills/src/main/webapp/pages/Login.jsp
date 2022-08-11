@@ -10,7 +10,6 @@
 <body class="loginWrap">
 	<jsp:include page="Header.jsp" />
 	
-	
 	<div class="login_">
 		<form class="loginForm" action="../pages/login.do" method="post">
 			<h2>로그인</h2>
@@ -19,8 +18,8 @@
    				<input class="id_pw" type="password" name="m_pw" placeholder="비밀번호를 입력하세요.">
 				<input type="submit" value="로그인">
 			</div>
-		</form>
-	</div>
+		</form> <!-- loginForm -->
+	</div> <!-- login_ -->
 	
 	
 	<jsp:include page="Footer.jsp" />

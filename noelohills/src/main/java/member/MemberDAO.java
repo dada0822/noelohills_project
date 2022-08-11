@@ -27,7 +27,7 @@ public class MemberDAO extends DBConnPool {
 			result = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("회원 정보 insert 중 예외 발생");
+			System.out.println("회원 정보 DB에 추가하는 중 예외 발생");
 		}
 		return result;
 	}

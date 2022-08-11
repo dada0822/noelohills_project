@@ -19,7 +19,7 @@
 					<div class="orderList_page_none">
 						<p>구매내역이 존재하지 않습니다.</p>
 						<input type="button" onclick="location.href='./product.do'" value="쇼핑하러가기">
-					</div>
+					</div> <!-- orderList_page_none -->
 				</c:when>
 				<c:otherwise>
 					<span class="separator"></span>
@@ -31,7 +31,7 @@
 							<li>수량</li>
 							<li>주문금액</li>
 						</ul>
-					</div>
+					</div> <!-- olist_title -->
 					<span class="separator"></span>
 					<c:forEach items="${orderList}" var="total" varStatus="loop">
 						<div class="orderList_page">
@@ -57,7 +57,7 @@
 									${total.o_price}원
 								</li>
 							</ul>
-						</div>
+						</div> <!-- orderList_page -->
 						<span class="separator"></span>
 					</c:forEach>
 					<div>
@@ -65,8 +65,8 @@
 					</div>
 				</c:otherwise>
 			</c:choose>
-		</div>
-	</div>
+		</div> <!-- oList -->
+	</div> <!-- orderList_ -->
 	
 	<jsp:include page="./Footer.jsp" />
 </body>

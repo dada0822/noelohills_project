@@ -84,6 +84,11 @@
 	line-height: 130px;
 }
 
+.basket_page a{
+	color: #767676;
+	font-weight: 600;
+}
+
 .basket_page ul li:nth-child(1)>a{
 	display: inline-block;
 	height: 130px;
@@ -113,11 +118,6 @@
 	height: auto;
 }
 
-.basket_page a{
-	color: #767676;
-	font-weight: 600;
-}
-
 .basket_page input{
 	width: 70px;
 	padding: 5px;
@@ -127,6 +127,7 @@
 	border: 1px solid #c3cfd9;
 }
 
+/* 하단 버튼 */
 .basket_bottom{
 	width: 900px;
 	margin: 0 auto;
@@ -138,9 +139,16 @@
 	margin-bottom: 20px;
 }
 
-.basket_bottom>div input:last-child{
-	background-color: #e7e7e7;
-    color: #777777;
+.basket_bottom span{
+	font-size: 18px;
+	font-weight: 600;
+	display: inline-block;
+	margin-bottom: 15px;
+}
+
+.basket_bottom span #point{
+	color: #ffcc00;
+	font-size: 19px;
 }
 
 .basket_bottom input{
@@ -157,14 +165,7 @@
 	font-size: 14px;
 }
 
-.basket_bottom span{
-	font-size: 18px;
-	font-weight: 600;
-	display: inline-block;
-	margin-bottom: 15px;
-}
-
-.basket_bottom span #point{
-	color: #ffcc00;
-	font-size: 19px;
+.basket_bottom>div input:last-child{
+	background-color: #e7e7e7;
+    color: #777777;
 }

@@ -10,6 +10,7 @@ public class Product_imgDAO extends DBConnPool {
 		super();
 	}
 	
+	// 제품코드에 맞는 제품 이미지 코드 가져오기
 	public List<Product_imgDTO> product_imgView(String p_code) {
 		List<Product_imgDTO> list = new Vector<Product_imgDTO>();
 		

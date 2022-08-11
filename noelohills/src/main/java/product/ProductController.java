@@ -40,7 +40,7 @@ public class ProductController extends HttpServlet {
 		map.put("start", start);
 		map.put("end", end);
 		
-		List<ProductDTO> productList = dao.selectListPage(map); // 상품 전체 조회
+		List<ProductDTO> productList = dao.selectListPage(map); // 상품 전체 조회(+페이징 기능)
 		
 		String p_categorycode = req.getParameter("p_categorycode");
 		List<ProductDTO> cate_product = dao.categoryProductList(p_categorycode); // 카테고리 별로 상품 정렬

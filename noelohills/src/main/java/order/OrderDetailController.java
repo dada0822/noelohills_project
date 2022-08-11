@@ -23,26 +23,20 @@ public class OrderDetailController extends HttpServlet {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
-		HttpSession session = req.getSession();
-	
-		String m_id = (String) session.getAttribute("m_id");
-		BasketDAO b_dao = new BasketDAO();
-		
-		BasketDTO b_dto = b_dao.memberInfo(m_id);
-		String m_code = b_dto.getM_code();
-		
 		OrderDAO dao = new OrderDAO();
+		
+		String m_code = dao.m_codeGet(); // 회원코드 따오기
 		
 		List<OrderDTO> orderDetail = dao.orderListDetails(m_code, o_code);
 		int ttprice = 0;
 		for(int i=0; i<orderDetail.size(); i++) {
 			ttprice += Integer.parseInt((orderDetail.get(i).getO_price().replace(",", "")).trim());
 		}
-		String tprice = Integer.toString(ttprice);
-		
-		System.out.println("tprice =>" + tprice);
+		String tprice = Integer.toString(ttprice); // 구매내역 상세조회
 		
 		tprice = tprice.replaceAll("\\B(?=(\\d{3})+(?!\\d))", ",");
+		
+		dao.close();
 		
 		map.put("tprice", tprice);
 		req.setAttribute("map", map);

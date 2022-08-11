@@ -21,13 +21,12 @@ public class BasketDeleteController extends HttpServlet {
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		String p_code = req.getParameter("p_code");
-		System.out.println("어떻게 나올지 " + p_code);
+
 		String m_id = (String) session.getAttribute("m_id");
-		System.out.println(m_id + "아이디값");
+		
 		BasketDAO dao = new BasketDAO();
 		
-		BasketDTO dto = dao.memberInfo(m_id);
-		// String m_code = dao.memberInfo(m_id); // 회원 코드 뽑아내기
+		BasketDTO dto = dao.memberInfo(m_id); // 회원 코드 뽑아내기
 		String m_code = dto.getM_code();
 		
 		List<BasketDTO> basketList2 = null;
@@ -35,11 +34,11 @@ public class BasketDeleteController extends HttpServlet {
 		if(p_code == null) { // 전체 삭제
 			dao.deleteProduct(m_code); // 전체 삭제
 		} else {
-			dao.deleteSelectedProduct(m_code, p_code); // 선택 제품 삭제
+			dao.deleteSelectedProduct(m_code, p_code); // 선택한 제품 삭제
 			
 			basketList2 = dao.basketList(m_code); // 장바구니 목록 조회
 			
-			String totalprice = dao.totalPrice(m_code);
+			String totalprice = dao.totalPrice(m_code); // 장바구니 내 총 상품 금액 계산
 			
 			map.put("totalprice", totalprice);
 		}

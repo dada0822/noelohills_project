@@ -35,7 +35,7 @@ public class SignupController extends HttpServlet {
 		
 		MemberDAO dao = new MemberDAO();
 		
-		int result = dao.insertMember(dto);
+		int result = dao.insertMember(dto); // 회원 정보 DB에 저장
 		
 		dao.close();
 		

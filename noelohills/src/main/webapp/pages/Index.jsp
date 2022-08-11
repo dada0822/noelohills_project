@@ -108,45 +108,45 @@
 					</ul>
 					<ul>
 						<li>
-							<img src="../image/index/sub/sub3_img1.png" alt="">
+							<img src="../image/index/sub/sub3_img1.png" alt="독일 더마 테스트 이미지">
 							<span>독일 더마 테스트</span>
 						</li>
 						<li>
-							<img src="../image/index/sub/sub3_img2.png" alt="">
+							<img src="../image/index/sub/sub3_img2.png" alt="피부 저자극 테스트 이미지">
 							<span>피부 저자극 테스트</span>
 						</li>
 						<li>
-							<img src="../image/index/sub/sub3_img3.png" alt="">
+							<img src="../image/index/sub/sub3_img3.png" alt="안자극 테스트 이미지">
 							<span>안자극 테스트</span>
 						</li>
 						<li>
-							<img src="../image/index/sub/sub3_img4.png" alt="">
+							<img src="../image/index/sub/sub3_img4.png" alt="임상실험 이미지">
 							<span>임상실험</span>
 						</li>
 						<li>
-							<img src="../image/index/sub/sub3_img5.png" alt="">
+							<img src="../image/index/sub/sub3_img5.png" alt="향 알러젠 테스트 이미지">
 							<span>향 알러젠 테스트</span>
 						</li>
 						<li>
-							<img src="../image/index/sub/sub3_img6.png" alt="">
+							<img src="../image/index/sub/sub3_img6.png" alt="Food Grade 이미지">
 							<span>Food Grade</span>
 						</li>
 						<li>
-							<img src="../image/index/sub/sub3_img7.png" alt="">
+							<img src="../image/index/sub/sub3_img7.png" alt="EWG 그린등급 이미지">
 							<span>EWG 그린등급</span>
 						</li>
 						<li>
-							<img src="../image/index/sub/sub3_img8.png" alt="">
+							<img src="../image/index/sub/sub3_img8.png" alt="유해 성분 무첨가 이미지">
 							<span>유해 성분 무첨가</span>
 						</li>
 						<li>
-							<img src="../image/index/sub/sub3_img9.png" alt="">
+							<img src="../image/index/sub/sub3_img9.png" alt="화해 설문 이미지">
 							<span>화해 설문</span>
 						</li>
 					</ul>
 				</div> <!-- section3 -->
 		    </div>
-		</div>
+		</div> <!-- index_ -->
 	
 	<jsp:include page="./Footer.jsp" />
 	

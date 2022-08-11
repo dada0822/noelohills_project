@@ -20,17 +20,17 @@
 					<div class="basket_page_none">
 						<p>장바구니에 담긴 상품이 없습니다.</p>
 						<input type="button" onclick="location.href='./product.do'" value="쇼핑하러가기">
-					</div>
+					</div> <!-- basket_page_none -->
 				</c:when>
 				<c:otherwise>
 					<span class="separator"></span>
 					<c:forEach items="${basketList2}" var="total" varStatus="loop">
-						<input type="hidden" name="m_code" value="${total.m_code}">
+						<input type="hidden" name="m_code" value="${total.m_code}"><!-- 회원코드 -->
 						<input type="hidden" name="p_name" value="${total.p_name}"><!-- 각각의 제품명 -->
 						<input type="hidden" name="p_totalprice" value="${total.b_price}"><!-- 각각의 금액 -->
-						<input type="hidden" name="totalprice" value="${map.totalprice}"> <!-- 총금액 -->
+						<input type="hidden" name="totalprice" value="${map.totalprice}"> <!-- 총 금액 -->
 						<input type="hidden" name="p_count" value="${total.b_count}"><!-- 각각의 개수 -->
-						<input type="hidden" name="p_code" value="${total.p_code}"><!-- 제품코드 추가! -->
+						<input type="hidden" name="p_code" value="${total.p_code}"><!-- 제품코드 -->
 						<div class="basket_page">
 							<ul>
 								<li>
@@ -55,7 +55,7 @@
 									<input type="button" onclick="location.href='./basketDelete.do?p_code=${total.p_code}'" value="삭제하기">
 								</li>
 							</ul>
-						</div>
+						</div> <!-- basket_page -->
 						<span class="separator"></span>
 					</c:forEach>
 					
@@ -67,11 +67,11 @@
 						<input type="button" onclick="location.href='./product.do'" value="쇼핑 계속하기">
 					</div>
 					<input type="button" onclick="location.href='./basketDelete.do'" onclick="return confirm('장바구니를 비우시겠습니까?');" value="장바구니 비우기">
-				</div>
+				</div> <!-- basket_bottom -->
 				</c:otherwise>
 			</c:choose>
-		</form>
-	</div>
+		</form> <!-- basketForm -->
+	</div> <!-- basket_ -->
 	
 	<jsp:include page="./Footer.jsp" />
 </body>

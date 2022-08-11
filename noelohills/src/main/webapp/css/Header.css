@@ -9,10 +9,10 @@
 	font-family: 'Montserrat';
 	
 	/* 드래그 방지 */
-/*     -webkit-user-select:none;
+	-webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
-    user-select:none; */
+    user-select:none;
 }
 
 header{
@@ -22,11 +22,9 @@ header{
 	position: fixed;
 	top: 0;
 	left: 0;
-	
 	z-index: 99999;
-	
-	background-color: rgba(255,255,255,0);
-	border-bottom: none;
+/* 	background-color: rgba(255,255,255,0);
+	border-bottom: none; */
 }
 
 .header_in{
@@ -61,9 +59,7 @@ header{
 	position: relative;
 }
 
-.header_in nav>ul>li>a{
-	height: 80px;
-	line-height: 80px;
+nav>ul>li:hover .sub_nav{
 	display: block;
 }
 
@@ -72,15 +68,24 @@ header{
 	font-size: 13px;
 }
 
+.header_in nav>ul>li>a{
+	height: 80px;
+	line-height: 80px;
+	display: block;
+}
+
+nav>ul>li>a:hover{
+	color: #ffcc00;
+}
+
 .sub_nav{
 	display: none;
-	
 	text-align: center;
 	height: auto;
 	background-color: #fafafa;
 }
 
-.sub_nav li{
+nav .sub_nav li{
 	width: 100%;
 	padding-top: 10px;
 	padding-bottom: 15px;
@@ -93,6 +98,10 @@ header{
 	height: 100%;
 	line-height: 100%;
 	align-items: center;
+}
+
+.sub_nav li a:hover{
+	color: #ffcc00;
 }
 
 .profile ul{
@@ -119,16 +128,4 @@ header{
 	width: auto;
 	height: 24px;
 	filter: invert(46%) sepia(11%) saturate(242%) hue-rotate(169deg) brightness(97%) contrast(90%);
-}
-
-nav>ul>li:hover .sub_nav{
-	display: block;
-}
-
-nav>ul>li>a:hover{
-	color: #ffcc00;
-}
-
-.sub_nav li a:hover{
-	color: #ffcc00;
 }

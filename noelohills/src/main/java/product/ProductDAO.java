@@ -25,7 +25,7 @@ public class ProductDAO extends DBConnPool {
 			rs.next();
 			totalCount = rs.getInt(1);
 		} catch (Exception e) {
-			System.out.println("게시물의 개수를 계산하는 중에 예외 발생");
+			System.out.println("게시물의 개수를 계산하는 중 예외 발생");
 			e.printStackTrace();
 		}
 		return totalCount;
@@ -71,36 +71,6 @@ public class ProductDAO extends DBConnPool {
 		
 		return bbs;
 	}
-	
-	// 상품 전체 조회
-//	public List<ProductDTO> totalProduct() {
-//		List<ProductDTO> list = new Vector<ProductDTO>();
-//		
-//		String query = "SELECT * FROM product";	
-//		try {
-//			
-//			stmt = con.createStatement();
-//			rs = stmt.executeQuery(query);
-//			
-//			while(rs.next()) {
-//				ProductDTO dto = new ProductDTO();
-//				
-//				dto.setP_code(rs.getString("p_code"));
-//				dto.setP_categorycode(rs.getString("p_categorycode"));
-//				dto.setP_name(rs.getString("P_name"));
-//				dto.setP_content(rs.getString("p_content"));
-//				dto.setP_price(rs.getString("p_price"));
-//				dto.setP_totalprice(rs.getString("p_totalprice"));
-//				dto.setP_count(rs.getString("p_count"));
-//				
-//				list.add(dto);
-//			}
-//		}catch(Exception e) {
-//			System.out.println("상품 정렬 중 예외 발생");
-//			e.printStackTrace();
-//		}
-//		return list;
-//	}
 	
 	// 카테고리별 상품 출력하기
 	public List<ProductDTO> categoryProductList(String p_categorycode) {
@@ -155,7 +125,7 @@ public class ProductDAO extends DBConnPool {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("카테고리코드를 불러오는 도중 예외 발생");
+			System.out.println("카테고리코드를 불러오는 중 예외 발생");
 		}
 		return list;
 	}
@@ -165,8 +135,8 @@ public class ProductDAO extends DBConnPool {
 	public ProductDTO productView(String p_code) {
 		ProductDTO dto = new ProductDTO();
 		
-		String query = "SELECT p_code, p_categorycode, p_name, p_content, to_char(p_price, '999,999') p_price, "
-					+ "	 to_char(p_totalprice, '999,999') p_totalprice, p_count " 
+		String query = "SELECT p_code, p_categorycode, p_name, p_content, TO_CHAR(p_price, '999,999') p_price, "
+					+ "	TO_CHAR(p_totalprice, '999,999') p_totalprice, p_count " 
 					+ " FROM product WHERE p_code=?";
 		
 		try {

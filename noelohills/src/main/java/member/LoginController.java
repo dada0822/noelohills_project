@@ -24,7 +24,7 @@ public class LoginController extends HttpServlet {
 		String m_pw = req.getParameter("m_pw");
 		
 		MemberDAO dao = new MemberDAO();
-		MemberDTO dto = dao.memberCheck(m_id, m_pw);
+		MemberDTO dto = dao.memberCheck(m_id, m_pw); // 회원 아이디, 비밀번호 확인
 		dao.close();
 		
 		if(dto.getM_id() != null) {
