@@ -22,23 +22,28 @@ public class BasketController extends HttpServlet {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 			
-		String m_id = (String) session.getAttribute("m_id");
-		BasketDAO dao = new BasketDAO();
+		if (!(session.getAttribute("m_id") == null)) {
+			String m_id = (String) session.getAttribute("m_id");
+			BasketDAO dao = new BasketDAO();
+			
+			BasketDTO dto = dao.memberInfo(m_id); // 회원 코드 뽑아내기
+			String m_code = dto.getM_code();
+			
+			List<BasketDTO> basketList2 = dao.basketList(m_code); // 장바구니 조회 
+			
+			String totalprice = dao.totalPrice(m_code); // 장바구니 내 총 상품 금액 계산
+			map.put("totalprice", totalprice);
+			
+			dao.close();
+			
+			req.setAttribute("basketList2", basketList2);
+			req.setAttribute("map", map);
+			
+			req.getRequestDispatcher("/pages/Basket.jsp").forward(req, resp);
+		} else {
+			JSFunction.alertLocation(resp, "로그인하셔야 장바구니 페이지로 갈 수 있습니다.", "./login.do");
+		}
 		
-		BasketDTO dto = dao.memberInfo(m_id); // 회원 코드 뽑아내기
-		String m_code = dto.getM_code();
-		
-		List<BasketDTO> basketList2 = dao.basketList(m_code); // 장바구니 조회 
-		
-		String totalprice = dao.totalPrice(m_code); // 장바구니 내 총 상품 금액 계산
-		map.put("totalprice", totalprice);
-		
-		dao.close();
-		
-		req.setAttribute("basketList2", basketList2);
-		req.setAttribute("map", map);
-		
-		req.getRequestDispatcher("/pages/Basket.jsp").forward(req, resp);
 	}
 	
 	

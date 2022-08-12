@@ -50,3 +50,16 @@ function count(type)  {
 	p_countElement.value = number;
 
 }
+
+/* 구매하기 */
+function buyConfirm(){
+	var isBuy = confirm("정말 구매하시겠습니까?");
+	if(isBuy)
+		form.action='./order.do'
+	else
+		return;
+};
+
+
+
+

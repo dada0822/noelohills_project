@@ -39,8 +39,6 @@ public class OrderpageController extends HttpServlet {
 
 		HttpSession session = req.getSession();
 		
-		// String m_id = (String) session.getAttribute("m_id");
-		
 		if (!(session.getAttribute("m_id") == null)) {
 			String m_code = req.getParameter("m_code"); // 상세페이지에서는 null, 회원코드 장바구니에서 구매하기를 누를 경우에만 값이 가져와짐
 			

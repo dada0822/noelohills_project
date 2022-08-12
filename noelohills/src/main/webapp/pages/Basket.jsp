@@ -9,6 +9,7 @@
 <link href="../css/Basket.css?v=1" rel="stylesheet">
 </head>
 <body class="basketWrap">
+
 	<jsp:include page="./Header.jsp" />
 	
 	<!-- 장바구니 비어있을 때랑 비어있지 않을 때 -->
@@ -52,7 +53,7 @@
 									${total.b_price}원
 								</li>
 								<li>
-									<input type="button" onclick="location.href='./basketDelete.do?p_code=${total.p_code}'" value="삭제하기">
+									<input type="button" onclick="javascript:selectedDelConfirm(${total.p_code})" value="삭제하기">
 								</li>
 							</ul>
 						</div> <!-- basket_page -->
@@ -63,10 +64,10 @@
 					<div>
 						<span>총합 : <span id="point">${map.totalprice}원</span></span>
 						<br>
-						<input type="submit" value="구매하기">
+						<input type="submit" onclick="return confirm('구매하시겠습니까?');" value="구매하기">
 						<input type="button" onclick="location.href='./product.do'" value="쇼핑 계속하기">
 					</div>
-					<input type="button" onclick="location.href='./basketDelete.do'" onclick="return confirm('장바구니를 비우시겠습니까?');" value="장바구니 비우기">
+					<input type="button" onclick="javascript:allDelConfirm()" value="장바구니 비우기">
 				</div> <!-- basket_bottom -->
 				</c:otherwise>
 			</c:choose>
@@ -74,5 +75,6 @@
 	</div> <!-- basket_ -->
 	
 	<jsp:include page="./Footer.jsp" />
+	<script src="${pageContext.request.contextPath}/js/Basket.js"></script>
 </body>
 </html>
