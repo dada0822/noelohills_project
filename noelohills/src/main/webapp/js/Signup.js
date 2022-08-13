@@ -66,7 +66,7 @@ function checkMember(){
 	}
 	
 	if (!regExpName.test(form.m_name.value)) {
-		alert("이름은 한글이나 영어로만 작성해 주세요.");
+		alert("이름은 한글 또는 영어로만 작성해 주세요.");
 		form.m_name.value.select();
 		return false;
 	}

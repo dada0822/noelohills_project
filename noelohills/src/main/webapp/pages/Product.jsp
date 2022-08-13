@@ -83,6 +83,5 @@
 	</div> <!-- product_ -->
 	
 	<jsp:include page="./Footer.jsp" />
-	<script src="${pageContext.request.contextPath}/js/Product.js"></script>
 </body>
 </html>

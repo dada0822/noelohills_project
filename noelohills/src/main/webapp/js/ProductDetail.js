@@ -11,7 +11,7 @@ function showBig(){
 }
 
 
-/* 버튼 클릭 시 개수 증가와 감소& 금액 계산 */
+/* 버튼 클릭 시 개수 증가와 감소 & 금액 계산 */
 function count(type)  {
 	
 	// 결과를 표시할 element
@@ -52,12 +52,15 @@ function count(type)  {
 }
 
 /* 구매하기 */
-function buyConfirm(){
+function buyConfirm(form){
 	var isBuy = confirm("정말 구매하시겠습니까?");
-	if(isBuy)
-		form.action='./order.do'
-	else
-		return;
+	if(isBuy){	
+		form.action='./order.do'; 
+    	form.submit();
+    	/*return true;*/
+	} else{
+		return
+	};
 };
 
 

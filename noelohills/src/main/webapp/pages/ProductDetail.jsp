@@ -47,7 +47,7 @@
 				</div> <!-- pd_count_price -->
 				
 				<div>
-					<button type="submit"  onclick="return confirm('구매하시겠습니까?');" onclick="form.action='./order.do'">구매하기</button>
+					<button type="button" onclick='return buyConfirm(this.form);'>구매하기</button>
 					<button type="submit" onclick="return confirm('장바구니에 담겠습니까?');">장바구니</button>
 				</div>	
 			</div>
