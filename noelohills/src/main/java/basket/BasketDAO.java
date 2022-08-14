@@ -88,13 +88,14 @@ public class BasketDAO extends DBConnPool {
 	
 	// 제품 개수와 금액 변경
 	public void updateCountPrice(BasketDTO dto) {
-		String query = "UPDATE basket SET b_count=?, b_price=? WHERE m_code=?";
+		String query = "UPDATE basket SET b_count=?, b_price=? WHERE m_code=? AND p_code=?";
 		
 		try {
 			psmt = con.prepareStatement(query);
 			psmt.setString(1, dto.getB_count());
 			psmt.setString(2, dto.getB_price());
 			psmt.setString(3, dto.getM_code());
+			psmt.setString(4, dto.getP_code());
 			
 			psmt.executeUpdate();
 		} catch (Exception e) {

@@ -23,8 +23,8 @@ public class OrderpageController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		OrderDAO dao = new OrderDAO();
-		
-		String m_code = dao.m_codeGet(); // 회원코드 따오기
+		HttpSession session = req.getSession();
+		String m_code = dao.m_codeGet((String) session.getAttribute("m_id")); // 회원코드 따오기
 		
 		List<OrderDTO> orderList = dao.orderList(m_code); // 주문 내역 조회
 		
@@ -53,11 +53,11 @@ public class OrderpageController extends HttpServlet {
 			dao.deleteProduct(m_code); // 장바구니 거쳐서 구매했을 경우만 장바구니 테이블에 데이터 삭제하기
 			
 			if (m_code == null) {
-				m_code = dao.m_codeGet(); // 회원코드 따오기
+				m_code = dao.m_codeGet((String) session.getAttribute("m_id")); // 회원코드 따오기
 			}
 			
 			dto.setM_code(m_code);
-			
+			System.out.println("확인용 !!!" + m_code);
 			List list = new Vector();
 			Map map = null;
 			for(int i=0; i<o_name.length; i++) {

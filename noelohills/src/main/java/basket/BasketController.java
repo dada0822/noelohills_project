@@ -71,7 +71,7 @@ public class BasketController extends HttpServlet {
 			String b_count = req.getParameter("p_count");
 			String p_name = req.getParameter("p_name");
 			
-			String p_totalprice = p_totalprice1.replaceAll(",", ""); 
+			String p_totalprice = p_totalprice1.replaceAll(",", "");
 			
 			int pos = -1;
 			// 제품이 있다면

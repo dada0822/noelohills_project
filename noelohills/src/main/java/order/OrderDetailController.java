@@ -25,7 +25,8 @@ public class OrderDetailController extends HttpServlet {
 		
 		OrderDAO dao = new OrderDAO();
 		
-		String m_code = dao.m_codeGet(); // 회원코드 따오기
+		HttpSession session = req.getSession();
+		String m_code = dao.m_codeGet((String) session.getAttribute("m_id")); // 회원코드 따오기
 		
 		List<OrderDTO> orderDetail = dao.orderListDetails(m_code, o_code);
 		int ttprice = 0;

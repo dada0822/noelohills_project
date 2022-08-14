@@ -27,20 +27,20 @@ function checkMember(){
 		return false;	
 	}
 	
+	if(!regExpPasswd.test(form.m_pw.value)){
+	alert("비밀번호는 10~16글자로 영문과 숫자, 특수기호를 조합해서 작성해 주세요.");
+	form.m_pw.value.select();
+	return false;
+	}
+	
 	if(form.m_pw_re.value== ""){
 		alert("비밀번호 재확인을 입력하세요.");
 		form.m_pw_re.focus();
 		return false;
 	}
 	
-	if(!regExpPasswd.test(form.m_pw.value)){
-		alert("비밀번호는 10~16글자로 영문과 숫자, 특수기호를 조합해서 작성해 주세요.");
-		form.m_pw.value.select();
-		return false;
-	}
-	
 	if(form.m_pw.value != form.m_pw_re.value){
-		alert("비밀번호 값이 다릅니다.");
+		alert("비밀번호가 일치하지 않습니다.");
 		form.m_pw.value="";
 		form.m_pw_re.value="";
 		form.m_pw.value.focus();

@@ -15,15 +15,17 @@ public class OrderDAO extends DBConnPool {
 	// 구매 테이블에 insert
 	// 구매내역 조회 select (회원 코드)	
 	// m_code 뽑아내기
-	public String m_codeGet() {
+	public String m_codeGet(String m_id) {
 		String m_code = "";
 		
-		String query = "SELECT m.m_code "
+		String query = "SELECT DISTINCT(m.m_code) m_code "
 					+ " FROM member m, order_ o "
-					+ " WHERE m.m_code = o.m_code(+)";
+					+ " WHERE m.m_code = o.m_code(+) "
+					+ " AND m.m_id=?";
 		try {
-			stmt = con.createStatement();
-			rs = stmt.executeQuery(query);
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, m_id);
+			rs = psmt.executeQuery();
 			if(rs.next()) {
 				m_code = rs.getString(1);
 			}
