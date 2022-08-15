@@ -57,7 +57,7 @@ public class OrderpageController extends HttpServlet {
 			}
 			
 			dto.setM_code(m_code);
-			System.out.println("È®ÀÎ¿ë !!!" + m_code);
+			
 			List list = new Vector();
 			Map map = null;
 			for(int i=0; i<o_name.length; i++) {

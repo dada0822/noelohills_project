@@ -42,6 +42,6 @@ public class OrderDetailController extends HttpServlet {
 		map.put("tprice", tprice);
 		req.setAttribute("map", map);
 		req.setAttribute("orderDetail", orderDetail);
-		req.getRequestDispatcher("/pages/OrderDetails.jsp").forward(req, resp);
+		req.getRequestDispatcher("/pages/OrderDetail.jsp").forward(req, resp);
 	}
 }

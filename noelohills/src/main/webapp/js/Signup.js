@@ -16,7 +16,7 @@ function checkMember(){
 		return false;
 	} 
 	if (!regExpId.test(form.m_id.value)) {
-		alert("아이디는 4~16글자로 숫자와 영문을 조합해서 작성해 주세요.");
+		alert("아이디는 4~16글자로 영문과 숫자를 조합해서 작성해 주세요.");
 		form.m_id.value.select();
 		return false;
 	}
@@ -28,7 +28,7 @@ function checkMember(){
 	}
 	
 	if(!regExpPasswd.test(form.m_pw.value)){
-	alert("비밀번호는 10~16글자로 영문과 숫자, 특수기호를 조합해서 작성해 주세요.");
+	alert("비밀번호는 10~16글자로 영문과 숫자, 특수문자를 조합해서 작성해 주세요.");
 	form.m_pw.value.select();
 	return false;
 	}
